@@ -1,6 +1,11 @@
-// Drink recipes (Alphabetic order) API call
+// Drink recipes (Listed by first letter) API call
 
-var requestUrl = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a';
+// Open index.html , open dev tools then check console tab to look at API data
+
+// Change last letter of Url to get a list of Cocktail names that start with that letter
+
+
+var requestUrl = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a'; // <------- change last letter to get different cocktails
 
 
 fetch(requestUrl)
