@@ -14,11 +14,12 @@ Cocktails and Dreams (?)
 
 
 ### Specific First Tasks - Assigned
-Matt - look into Css frameworks (?)
-Allan - Get access to API's (?)
-Angelica -
-Saeed - Css frameworks (?)
-Chris - 
-Unassigned - Start Html file , 
+
+Matt - look into Css frameworks, styling basics 
+Allan - Get access to API's
+Angelica - README skeleton
+Saeed - Start Html file skeleton
+Chris - Write pseudocode
+
 ## Roles for Contributors
 
