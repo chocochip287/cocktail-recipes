@@ -3,9 +3,37 @@
 // Open index.html , open dev tools then check console tab to look at API data
 
 // Change last letter of Url to get a list of Cocktail names that start with that letter
+var lowerCase = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+];
 
-
-var requestUrl = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a'; // <------- change last letter to get different cocktails
+for(var i = 0 ; i < lowerCase.length ; i++){
+var requestUrl = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f='+lowerCase[i] ; // <------- change last letter to get different cocktails
 
 
 fetch(requestUrl)
@@ -19,7 +47,7 @@ fetch(requestUrl)
     
     }console.log(data[i])
     
-  });
+  })};
 
 // We also have the Urls to :
 //search drink by name, 
