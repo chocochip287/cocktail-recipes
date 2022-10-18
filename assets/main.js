@@ -5,7 +5,7 @@
 // Change last letter of Url to get a list of Cocktail names that start with that letter
 
 
-var requestUrl = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a'; // <------- change last letter of Url to get different cocktails(Listed by first letter of cocktail name). 
+var requestUrl = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a'; // <------- change last letter to get different cocktails
 
 
 fetch(requestUrl)
