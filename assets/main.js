@@ -41,12 +41,14 @@ fetch(requestUrl)
     return response.json();
   })
   .then(function (data) {
-    console.log('Github Repo Issues \n----------');
     console.log(data);
     for( var i = 0; i < data.length ; i++){
     
-    }console.log(data[i])
+    }
     
+
+    
+    // localStorage.setItem("Drinks" , data.drinks[0].strDrink)
   })};
 
 // We also have the Urls to :
