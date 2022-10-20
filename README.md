@@ -2,7 +2,7 @@
 
 
 # User Story
-As a person who has an active solcial life and who has frequent guests visiting, I want to be able to use an app where I can look for ingredients I have at home, so I can prepare different drinks for my guests.
+As a person who has an active social life and who has frequent guests visiting, I want to be able to use an app where I can look for ingredients I have at home, so I can prepare different drinks for my guests.
 
 
 
@@ -19,20 +19,20 @@ As a person who has an active solcial life and who has frequent guests visiting,
 
 
 ## Usage
-1.-Open the  cocktail app. From the  drop down menu displayed at the top of the application, select the ingredients you would like to use to prepare your drink.
+1. Open the  cocktail app. From the  drop down menu displayed at the top of the application, select the ingredients you would like to use to prepare your drink.
 
-2.-Click on the search button.
+2. Click on the search button.
 
-3.-The application will return many differnet drinks recipies that include the ingredients you selected.
+3. The application will return many differnet drinks recipies that include the ingredients you selected.
 
-4.-Click on the "clear button" to start a new search
+4. Click on the "clear button" to start a new search
 
 
 
 ## Mock-Up
 
 
-The following image add -Ademonstrates the application functionality:
+The following image add demonstrates the application functionality:
 
 ![The screen shows pictures of propsed drinks based on the selected ingredients.](./assets/img/image1.jpeg)
 
