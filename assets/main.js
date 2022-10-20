@@ -45,6 +45,10 @@ fetch(requestUrl)
   
 }
 
+var showDrinks = document.querySelector("#getDrinks");
+
+showDrinks.addEventListener("click", getDrinks);
+
 
 
 
