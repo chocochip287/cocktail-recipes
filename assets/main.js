@@ -32,8 +32,9 @@ var lowerCase = [
   "z",
 ];
 
-for(var i = 0 ; i < lowerCase.length ; i++){
-var requestUrl = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f='+lowerCase[i] ; // <------- change last letter to get different cocktails
+
+// var requestUrl = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f='+lowerCase[i] ; // <------- change last letter to get different cocktails
+var requestUrl = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin' ; // <------- change last letter to get different cocktails
 
 
 fetch(requestUrl)
@@ -41,16 +42,13 @@ fetch(requestUrl)
     return response.json();
   })
   .then(function (data) {
-    console.log(data);
-    for( var i = 0; i < data.length ; i++){
-    
-    }
-    
+    console.log(data); 
+  });
 
-    
-    // localStorage.setItem("Drinks" , data.drinks[0].strDrink)
-  })};
 
+  // function addToLocal(){
+  //   localStorage.setItem("Drinks" , )
+  // }
 // We also have the Urls to :
 //search drink by name, 
 //search ingredient by name , 
