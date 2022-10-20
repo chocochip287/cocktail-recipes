@@ -42,7 +42,7 @@ The following image add demonstrates the application functionality:
 
 Here is the link of the finished work: 
 
-[Deployed website](#)|
+[Deployed website](https://chocochip287.github.io/cocktail-recipes/)|
 
 
 ## Credits
