@@ -28,7 +28,7 @@ var lowerCase = [
   "z",
 ];
 
-function getDrink(){
+function getDrinks(){
 var ingredientName = document.getElementById("searchBar").value
 var requestUrl = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?i='+ingredientName;
 
