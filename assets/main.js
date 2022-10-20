@@ -1,8 +1,4 @@
-// Drink recipes (Listed by first letter) API call
 
-// Open index.html , open dev tools then check console tab to look at API data
-
-// Change last letter of Url to get a list of Cocktail names that start with that letter
 var lowerCase = [
   "a",
   "b",
@@ -32,9 +28,9 @@ var lowerCase = [
   "z",
 ];
 
-
-// var requestUrl = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f='+lowerCase[i] ; // <------- change last letter to get different cocktails
-var requestUrl = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin' ; // <------- change last letter to get different cocktails
+function getDrink(){
+var ingredientName = document.getElementById("searchBar").value
+var requestUrl = 'https://www.thecocktaildb.com/api/json/v1/1/filter.php?i='+ingredientName;
 
 
 fetch(requestUrl)
@@ -46,14 +42,8 @@ fetch(requestUrl)
   });
 
 
-  // function addToLocal(){
-  //   localStorage.setItem("Drinks" , )
-  // }
-// We also have the Urls to :
-//search drink by name, 
-//search ingredient by name , 
-//Lookup full cocktail details by id, 
-//Lookup ingredient by ID
+  
+}
 
 
 
