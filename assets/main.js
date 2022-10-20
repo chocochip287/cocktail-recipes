@@ -45,13 +45,15 @@ function getDrinks() {
     });
 
 }
-
+var drinkBox = document.querySelector("#drinkContainer")
 var showDrinks = document.querySelector("#getDrinks");
 showDrinks.addEventListener("click", getDrinks);
 
 function renderDrinks(drinkData) {
   console.log({drinkData})
-  for(var i = 0 ; i < 15 ; i++){
+  drinkBox.innerHTML = "";
+  for(var i = 0 ; i < drinkData.drinks.length ; i++){
+  
   // create
   
   var drinkName = document.createElement("p")
