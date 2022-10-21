@@ -26,7 +26,6 @@ var showDrinks = document.querySelector("#getDrinks");
 showDrinks.addEventListener("click", getDrinks);
 
 function renderDrinks(drinkData) {
-  console.log({ drinkData });
   for (var i = 0; i < 15; i++) {
     // create
 
@@ -85,9 +84,9 @@ function addToStorage() {
 
 // This function renders ingredient search history on the page
 function renderStorage() {
-  var searchedIngredientsArray = JSON.parse(
+  var searchedIngredientsArray = JSON.parse(localStorage.getItem("searchedDrinks")) || [];
     localStorage.getItem("searchedDrinks")
-  );
+
 
   // This method clears out the buttons before adding a new string to the page
   document.getElementById("placeholderHistory").innerHTML = "";
