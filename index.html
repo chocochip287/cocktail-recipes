@@ -1,41 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>The Cocktail Findifier</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-        <link rel="stylesheet" href="./assets/style.css">
-    </head>
-    
-    <body>
-        <header class="" id="">
 
-        </header>
-        <!-- section #1 -->
-        <aside class="main-section" id="preSearch">
-            <div class="main-div" id="main-content">
-                <label for="searchBar">The Cocktail Findifier</label>
-                <input type="text" id="searchBar" placeholder="type your ingredient here" \>
-                <button id="getDrinks">What can I make?</button>
-                <p> underneath this is a placeholder for the ingredient history </p>
-                    <div  id="placeholderHistory">
-                    
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cocktail Findifier</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
 
-                    </div>
-            </div>
-            <div class="hide-me" id="jokes">
-                <p>Jokes go here</p>
-            </div>
-        </aside>
+<body>
+    <header class="" id="">
+    </header>
+    <!-- section #1 -->
+    <aside class="main-section" id="preSearch">
+        <div class="main-div" id="main-content">
+            <label for="searchBar">The Cocktail Findifier</label>
+            <input type="text" id="searchBar" placeholder="type your ingredient here" \>
+            <button id="getDrinks">What can I make?</button>
+            <p> underneath this is a placeholder for the ingredient history </p>
+            
+            <!-- Search history -->
+            <div id="placeholderHistory">
 
-        <!-- section #2 -->
-        <div class="second-section" id="">
-            <div id="drinkContainer">
-            </div>
+
+            </div> 
+            
         </div>
+        <!-- Div to place the Jokes-->
+        <div class="hide-me" id="jokes">
+            <p>Jokes go here</p>
+        </div>
+        <!-- End of div Div to place the Jokes-->
+    </aside>
+
+    <!-- section #2 Drink Container-->
     
-        <script src="assets/main.js"></script>
-    </body>
+    <div class="second-section" id="">
+        <div id="drinkContainer">
+        </div>
+    </div>
+
+    <script src="assets/main.js"></script>
+</body>
+
 </html>

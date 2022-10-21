@@ -22,6 +22,7 @@ function getDrinks() {
 }
 var drinkBox = document.querySelector("#drinkContainer");
 var showDrinks = document.querySelector("#getDrinks");
+
 // event that triggers the search for the ingredient and also begins the transition between screens
 showDrinks.addEventListener("click", getDrinks);
 
@@ -55,6 +56,8 @@ fetch(requestUrl)
     console.log(data);
   });
 
+// Second API that will show a joke. The function for the joke will be troggered by the event listener
+//attached to the second button. The same asthe API query. The joke will be rendered to the page 
 var requestUrl =
   "https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&contains=Bar&amount=1";
 
@@ -85,7 +88,7 @@ function addToStorage() {
 // This function renders ingredient search history on the page
 function renderStorage() {
   var searchedIngredientsArray = JSON.parse(localStorage.getItem("searchedDrinks")) || [];
-    localStorage.getItem("searchedDrinks")
+  localStorage.getItem("searchedDrinks")
 
 
   // This method clears out the buttons before adding a new string to the page
