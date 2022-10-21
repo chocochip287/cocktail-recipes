@@ -1,19 +1,32 @@
+// variables to target specific classes/IDs
+var drinkBox = document.querySelector("#drinkContainer");
+var showDrinks = document.querySelector("#getDrinks");
+var mainDiv = document.querySelector("#main-content")
+var jokesDiv = document.querySelector("#jokes")
+var searchBar = document.querySelector("#searchBar");
+
 // empty array to house random numbers used to select cocktails from the API
 var randomNumbers = [];
 
 // variable to store the user's ingredient in global scope
-var ingredientName;
+var ingredientName = "";
 
 // establishing drinkResults in the global scope
 var drinkResults;
 
+// function to ensure that the search bar isn't empty
+function searchCheck() {
+  ingredientName = document.getElementById("searchBar").value;
+  if (ingredientName === "") {
+    searchBar.setAttribute("placeholder", "You can't search for no ingredient!");
+  } else {
+    getDrinks();
+  }
+}
 
 // function that fetches a drink list based on the user's seached ingredient
 function getDrinks() {
-  ingredientName = document.getElementById("searchBar").value;
-  var requestUrl =
-    "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" +
-    ingredientName;
+  var requestUrl = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + ingredientName;
 
   fetch(requestUrl)
     .then(function (response) {
@@ -25,17 +38,15 @@ function getDrinks() {
       drinkResults = data;
     });
 
-  addToStorage();
+    jokesTransition();
+  // addToStorage();
 }
 
-var drinkBox = document.querySelector("#drinkContainer");
-var showDrinks = document.querySelector("#getDrinks");
-
 // event that triggers the search for the ingredient and also begins the transition between screens
-showDrinks.addEventListener("click", getDrinks);
+showDrinks.addEventListener("click", searchCheck);
 
 function renderDrinks(drinkData) {
-  for (var i = 0; i < 15; i++) {
+  for (var i = 0; i < drinkData.drinks.length; i++) {
     // create
 
     var drinkName = document.createElement("p");
@@ -43,7 +54,7 @@ function renderDrinks(drinkData) {
 
     drinkName.textContent = drinkData.drinks[i].strDrink;
     // append (MG - commented out for now. don't want to append directly from the search)
-    document.getElementById("drinkContainer").append(drinkName);
+    // document.getElementById("drinkContainer").append(drinkName);
   }
 }
 
@@ -53,7 +64,7 @@ function getRandomNumbers() {
   randomNumbers = [];
   // determining how many numbers to generate based on the length of drinkData, then adding those numbers to randomNumbers
   if (drinkResults.drinks.length < 5) {
-    for (i=0; i < drinkData.length; i++) {
+    for (i=0; i < drinkResults.drinks.length; i++) {
       var random = Math.floor(Math.random() * drinkResults.drinks.length);
       randomNumbers.push(random);
     }
@@ -66,6 +77,14 @@ function getRandomNumbers() {
     }
   }
 
+// function to transition content from the search screen
+
+function jokesTransition() {
+  console.log ("hello there!");
+  // class switches to hide pre-search screen
+  mainDiv.setAttribute("class", "hide-me");
+  jokesDiv.setAttribute("class", "jokes-div");
+}
 // Second API (Project requires at least 2)
 
 var requestUrl = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list";
@@ -91,6 +110,8 @@ fetch(requestUrl)
     console.log(data);
   });
 
+
+/* Uncomment this if it's determined to be necessary. 
 // Set and empty searched ingredients Array to global
 var searchedIngredientsArray = [];
 
@@ -129,3 +150,4 @@ function renderStorage() {
 
 // Called function in the end to execute as soon as page loads
 renderStorage();
+*/
