@@ -1,7 +1,12 @@
 // empty array to house random numbers used to select cocktails from the API
 var randomNumbers = [];
+
 // variable to store the user's ingredient in global scope
 var ingredientName;
+
+// establishing drinkResults in the global scope
+var drinkResults;
+
 
 // function that fetches a drink list based on the user's seached ingredient
 function getDrinks() {
@@ -14,14 +19,18 @@ function getDrinks() {
     .then(function (response) {
       return response.json();
     })
-    .then(function (data) {
-      renderDrinks(data);
+
+    .then(function(data) {
+      renderDrinks(data)
+      drinkResults = data;
     });
 
   addToStorage();
 }
+
 var drinkBox = document.querySelector("#drinkContainer");
 var showDrinks = document.querySelector("#getDrinks");
+
 // event that triggers the search for the ingredient and also begins the transition between screens
 showDrinks.addEventListener("click", getDrinks);
 
@@ -38,9 +47,24 @@ function renderDrinks(drinkData) {
   }
 }
 
-function randomNumbers() {
-  console.log("Hello there!");
-}
+// function that generates up to five numbers used to select drinks for display based on the user's search
+function getRandomNumbers() {
+  // clears the array in case for some reason it had old data in it
+  randomNumbers = [];
+  // determining how many numbers to generate based on the length of drinkData, then adding those numbers to randomNumbers
+  if (drinkResults.drinks.length < 5) {
+    for (i=0; i < drinkData.length; i++) {
+      var random = Math.floor(Math.random() * drinkResults.drinks.length);
+      randomNumbers.push(random);
+    }
+  } 
+  else {
+    for (i=0; i < 5; i++) {
+      var random = Math.floor(Math.random() * drinkResults.drinks.length);
+      randomNumbers.push(random);
+      }
+    }
+  }
 
 // Second API (Project requires at least 2)
 
