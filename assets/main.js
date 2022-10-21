@@ -17,6 +17,9 @@ function getDrinks() {
     .then(function(data) {
       renderDrinks(data)
     });
+
+    addToStorage()
+    renderStorage()
 }
 var drinkBox = document.querySelector("#drinkContainer");
 var showDrinks = document.querySelector("#getDrinks");
@@ -24,6 +27,7 @@ var showDrinks = document.querySelector("#getDrinks");
 showDrinks.addEventListener("click", getDrinks);
 
 function renderDrinks(drinkData) {
+  
   console.log({drinkData})
   for(var i = 0 ; i < 15 ; i++){
   // create
@@ -65,3 +69,16 @@ fetch(requestUrl)
     console.log(data);
   });
   
+function addToStorage(){
+  console.log("stored drinks")
+  localStorage.setItem("searchedDrinks", JSON.stringify(ingredientName))
+}
+
+function renderStorage(){
+  // create
+  var savedIngredient = document.createElement("button")
+  // modify
+  savedIngredient.textContent = JSON.parse(localStorage.getItem("searchedDrinks"))
+  // append
+  document.getElementById("main-content").append(savedIngredient)
+}
