@@ -4,15 +4,19 @@ var showDrinks = document.querySelector("#getDrinks");
 var mainDiv = document.querySelector("#main-content")
 var jokesDiv = document.querySelector("#jokes")
 var searchBar = document.querySelector("#searchBar");
+var header = document.querySelector("#header")
 
+// utility/functionality variables 
 // empty array to house random numbers used to select cocktails from the API
 var randomNumbers = [];
-
 // variable to store the user's ingredient in global scope
 var ingredientName = "";
-
 // establishing drinkResults in the global scope
 var drinkResults;
+// variable for the timer for the joke screen transition
+var timeLeft = 10;
+// variable to append text into the jokes div
+var jokesTextDiv = document.createElement("div");
 
 // function to ensure that the search bar isn't empty
 function searchCheck() {
@@ -80,10 +84,33 @@ function getRandomNumbers() {
 // function to transition content from the search screen
 
 function jokesTransition() {
+  // test text
   console.log ("hello there!");
-  // class switches to hide pre-search screen
+  // class switches to hide pre-search screen and start the timer
   mainDiv.setAttribute("class", "hide-me");
   jokesDiv.setAttribute("class", "jokes-div");
+  jokesDiv.appendChild(jokesTextDiv);
+  jokesTextDiv.textContent = "Loading your results in.. " + timeLeft + " seconds";
+  var jokesTimer = setInterval(function () {
+    if (timeLeft > 1) {
+      jokesTextDiv.textContent = "Loading your results in.. " + timeLeft + " seconds";
+      timeLeft--;
+    } else if (timeLeft === 1) {
+      jokesTextDiv.textContent = "Loading your results in.. " + timeLeft + " second";
+      timeLeft--;
+    } else {
+      jokesTextDiv.textContent = "Your search results are.."
+      resultsTransition();
+      clearInterval(jokesTimer);
+    }
+  }, 1000);
+}
+
+// function to transition from the jokes screen to the final content
+function resultsTransition() {
+  // test text
+  console.log("Hello there! The results transition calls properly!")
+
 }
 // Second API (Project requires at least 2)
 
