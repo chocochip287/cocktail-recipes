@@ -11,14 +11,14 @@ function getDrinks() {
 
 
   fetch(requestUrl)
-    .then(function(response) {
+    .then(function (response) {
       return response.json();
     })
     .then(function(data) {
       renderDrinks(data)
     });
 }
-
+var drinkBox = document.querySelector("#drinkContainer");
 var showDrinks = document.querySelector("#getDrinks");
 showDrinks.addEventListener("click", getDrinks);
 
@@ -41,18 +41,13 @@ function randomNumbrs() {
 
 // Second API (Project requires at least 2)
 
-// var requestUrl = 'https://{Url}';
+var requestUrl = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list";
 
-// fetch(requestUrl)
-//   .then(function (response) {
-//     return response.json();
-//   })
-//   .then(function (data) {
-//     console.log('Github Repo Issues \n----------');
-//     console.log(data);
-//     for( var i = 0; i < data.length ; i++){
-
-//     }console.log(data[i])
-
-
-//   });
+fetch(requestUrl)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    console.log("List of ingredients");
+    console.log(data);
+  });
