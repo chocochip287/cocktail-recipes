@@ -10,6 +10,10 @@ body {
     border: 2px solid red;
 }
 
+.header {
+    display: flex;
+}
+
 .main-div {
     display: flex;
     flex-direction: column;
