@@ -32,7 +32,7 @@ function renderDrinks(drinkData) {
 
   drinkName.textContent = drinkData.drinks[i].strDrink;
   // append (MG - commented out for now. don't want to append directly from the search)
-  // document.getElementById('drinkContainer').append(drinkName)
+  document.getElementById('drinkContainer').append(drinkName)
 }}
 
 function randomNumbrs() {
@@ -51,3 +51,16 @@ fetch(requestUrl)
     console.log("List of ingredients");
     console.log(data);
   });
+
+
+  var requestUrl = "https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&contains=Bar&amount=1";
+
+fetch(requestUrl)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    console.log("Bar Jokes");
+    console.log(data);
+  });
+  
