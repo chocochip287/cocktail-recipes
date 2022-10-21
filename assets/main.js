@@ -20,6 +20,7 @@ function getDrinks() {
 }
 var drinkBox = document.querySelector("#drinkContainer");
 var showDrinks = document.querySelector("#getDrinks");
+// event that triggers the search for the ingredient and also begins the transition between screens
 showDrinks.addEventListener("click", getDrinks);
 
 function renderDrinks(drinkData) {
@@ -35,7 +36,7 @@ function renderDrinks(drinkData) {
   // document.getElementById('drinkContainer').append(drinkName)
 }}
 
-function randomNumbrs() {
+function randomNumbers() {
   console.log("Hello there!");
 }
 

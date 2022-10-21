@@ -7,10 +7,23 @@ body {
     height: 100vh;
 }
 
+.main-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    height: 90vh;
+}
+
 #searchBar {
     width: 50%;
     font-size: 18px;
     padding: 11px;
     border: 1px solid #ddd;
+    text-align: center;
 }
 
+.hide-me {
+    display: none;
+}
