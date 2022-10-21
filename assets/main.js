@@ -6,7 +6,7 @@ var jokesDiv = document.querySelector("#jokes")
 var searchBar = document.querySelector("#searchBar");
 var header = document.querySelector("#header")
 
-// utility/functionality variables
+// utility/functionality variables 
 // empty array to house random numbers used to select cocktails from the API
 var randomNumbers = [];
 // variable to store the user's ingredient in global scope
