@@ -19,7 +19,7 @@ function getDrinks() {
     });
 
     addToStorage()
-    renderStorage()
+    
 }
 var drinkBox = document.querySelector("#drinkContainer");
 var showDrinks = document.querySelector("#getDrinks");
@@ -68,17 +68,30 @@ fetch(requestUrl)
     console.log("Bar Jokes");
     console.log(data);
   });
-  
+  var searchedIngredientsArray = []
 function addToStorage(){
-  console.log("stored drinks")
-  localStorage.setItem("searchedDrinks", JSON.stringify(ingredientName))
+
+  var searchedIngredient = document.querySelector("#searchBar").value
+  searchedIngredientsArray.push(searchedIngredient)
+  localStorage.setItem("searchedDrinks", JSON.stringify(searchedIngredientsArray))
+
+  renderStorage()
 }
 
+
 function renderStorage(){
+  
+  document.getElementsByClassName("historyButtons").value = ''
+
+  // searchedIngredientsArray = localStorage.getItem("searchedDrinks")
+  for(var i = 0 ; i < searchedIngredientsArray.length ; i++){
+
   // create
   var savedIngredient = document.createElement("button")
   // modify
-  savedIngredient.textContent = JSON.parse(localStorage.getItem("searchedDrinks"))
+  savedIngredient.textContent = searchedIngredientsArray[i]
+  savedIngredient.setAttribute("class","historyButtons")
   // append
   document.getElementById("main-content").append(savedIngredient)
-}
+}}
+// renderStorage()
