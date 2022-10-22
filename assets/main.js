@@ -106,13 +106,16 @@ function jokesTransition() {
   }, 1000);
 }
 
+//Joke place holder
+
+
 // function to transition from the jokes screen to the final content
 function resultsTransition() {
   // test text
   console.log("Hello there! The results transition calls properly!")
 
 }
-// Second API (Project requires at least 2)
+
 
 var requestUrl = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list";
 
@@ -125,6 +128,7 @@ fetch(requestUrl)
     console.log(data);
   });
 
+  //THIS is the Seconf API (the one for the Jokes)
 var requestUrl =
   "https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&contains=Bar&amount=1";
 
@@ -137,6 +141,12 @@ fetch(requestUrl)
     console.log(data);
   });
 
+  // Jokes function place holder
+//for (var i = 0; data.lenght; i++) {
+  //console.log(data [i]);
+
+
+  //
 
 /* Uncomment this if it's determined to be necessary. 
 // Set and empty searched ingredients Array to global
