@@ -100,7 +100,7 @@ function jokesTransition() {
       jokesTextDiv.textContent = "Your search results are.."
       resultsTransition();
       clearInterval(jokesTimer);
-      setTimeout(afterTimeout() , 1000);
+      setTimeout(afterTimeout , 3000);
     
     }
   }, 1000);
