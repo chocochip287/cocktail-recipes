@@ -100,9 +100,19 @@ function jokesTransition() {
       jokesTextDiv.textContent = "Your search results are.."
       resultsTransition();
       clearInterval(jokesTimer);
+      setTimeout(afterTimeout() , 1000);
+    
     }
   }, 1000);
 }
+
+
+function afterTimeout(){
+  mainDiv.setAttribute("class", "hide-me");
+ jokesDiv.setAttribute("class", "hide-me");
+ 
+}
+
 
 // function to transition from the jokes screen to the final content
 function resultsTransition() {
