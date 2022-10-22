@@ -57,8 +57,6 @@ function renderDrinks(drinkData) {
     // modify
 
     drinkName.textContent = drinkData.drinks[i].strDrink;
-    // append (MG - commented out for now. don't want to append directly from the search)
-    // document.getElementById("drinkContainer").append(drinkName);
   }
 }
 
