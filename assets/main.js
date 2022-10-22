@@ -38,7 +38,7 @@ function getDrinks() {
     })
 
     .then(function(data) {
-      renderDrinks(data)
+      // renderDrinks(data)
       drinkResults = data;
     });
 
@@ -49,14 +49,17 @@ function getDrinks() {
 // event that triggers the search for the ingredient and also begins the transition between screens
 showDrinks.addEventListener("click", searchCheck);
 
-function renderDrinks(drinkData) {
-  for (var i = 0; i < drinkData.drinks.length; i++) {
+function renderDrinks() {
+  for (var i = 0; i < drinkResults.drinks.length; i++) {
     // create
 
     var drinkName = document.createElement("p");
     // modify
 
-    drinkName.textContent = drinkData.drinks[i].strDrink;
+    drinkName.textContent = drinkResults.drinks[i].strDrink
+
+
+    document.body.append(drinkName)
   }
 }
 
@@ -101,7 +104,7 @@ function jokesTransition() {
       resultsTransition();
       clearInterval(jokesTimer);
       setTimeout(afterTimeout , 3000);
-    
+      
     }
   }, 1000);
 }
@@ -110,7 +113,7 @@ function jokesTransition() {
 function afterTimeout(){
   mainDiv.setAttribute("class", "hide-me");
  jokesDiv.setAttribute("class", "hide-me");
- 
+ renderDrinks()
 }
 
 
