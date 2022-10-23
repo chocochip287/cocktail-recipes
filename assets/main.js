@@ -5,7 +5,8 @@ var mainDiv = document.querySelector("#main-content")
 var jokesDiv = document.querySelector("#jokes")
 var searchBar = document.querySelector("#searchBar");
 var header = document.querySelector("#header")
-
+//Joke paragraph//
+var jokePEl = document.querySelector("#jokeP");
 // utility/functionality variables 
 // empty array to house random numbers used to select cocktails from the API
 var randomNumbers = [];
@@ -85,6 +86,7 @@ function getRandomNumbers() {
 // function to transition content from the search screen
 
 function jokesTransition() {
+  getJokes();
   // test text
   console.log ("hello there!");
   // class switches to hide pre-search screen and start the timer
@@ -136,23 +138,34 @@ fetch(requestUrl)
     console.log(data);
   });
 
-var requestUrl =
-  "https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&contains=Bar&amount=1";
+  
+  //Function for the Jokes API
+ function getJokes() {
+  var requestJokesUrl = "https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&contains=Bar&amount=1";
 
-fetch(requestUrl)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    console.log("Bar Jokes");
-    console.log(data);
-  });
+  //Fetch the API
+  fetch(requestJokesUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+  //Render the Jokes
+      //  renderJokes(data);
+    console.log(data.joke);
+        // create elements on HTML
+       var jokeName = document.createElement("p");
+        // modify
+        jokeName.textContent = data.joke; 
+      jokePEl.appendChild(jokeName); 
+      
+    });
+
+ }
 
 
 /* Uncomment this if it's determined to be necessary. 
 // Set and empty searched ingredients Array to global
 var searchedIngredientsArray = [];
-
 // This function adds the keyword in the search bar to the local storage as a string
 function addToStorage() {
   var searchedIngredient = document.querySelector("#searchBar").value;
@@ -161,19 +174,14 @@ function addToStorage() {
     "searchedDrinks",
     JSON.stringify(searchedIngredientsArray)
   );
-
   renderStorage();
 }
-
 // This function renders ingredient search history on the page
 function renderStorage() {
   var searchedIngredientsArray = JSON.parse(localStorage.getItem("searchedDrinks")) || [];
     localStorage.getItem("searchedDrinks")
-
-
   // This method clears out the buttons before adding a new string to the page
   document.getElementById("placeholderHistory").innerHTML = "";
-
   // looped the searched ingredients array to add a button for each string in the array
   for (var i = 0; i < searchedIngredientsArray.length; i++) {
     // create
@@ -185,7 +193,6 @@ function renderStorage() {
     document.getElementById("placeholderHistory").append(savedIngredient);
   }
 }
-
 // Called function in the end to execute as soon as page loads
 renderStorage();
 */
