@@ -1,8 +1,13 @@
 /* full borders are present only for planning/structuring purposes. */
 
 
+* {
+    background-color: rgb(16, 43, 68);
+    color: rgb(255, 255, 255);
+}
+
 /* This is the line that fixes the autofill white background */
-/* input:-webkit-autofill,
+input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus,
 textarea:-webkit-autofill,
@@ -14,12 +19,10 @@ select:-webkit-autofill:focus {
   border: 1px solid green;
   -webkit-text-fill-color: white;
   -webkit-box-shadow: 0 0 0px 1000px rgb(16, 43, 68) inset;
-  transition: background-color 5000s ease-in-out 0s;
-} */
-
-* {
-    background-color: rgb(16, 43, 68);
-    color: rgb(255, 255, 255);
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  
 }
 
 body {
@@ -55,19 +58,15 @@ body {
     padding: 11px;
     border: 1px solid #ddd;
     text-align: center;
-    
-    
 }
 
 .hide-me {
     display: none;
 }
 
-#placeholderHistory{
+#placeholderHistory {
     display:flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-
 }
