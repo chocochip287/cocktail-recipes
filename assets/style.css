@@ -22,7 +22,6 @@ select:-webkit-autofill:focus {
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
-  
 }
 
 body {
@@ -54,10 +53,12 @@ body {
 
 #searchBar {
     width: 50%;
-    font-size: 18px;
+    /* font-size: 18px;*/
     padding: 11px;
     border: 1px solid #ddd;
     text-align: center;
+    margin-bottom: 10px;
+    margin-top: 5px;
 }
 
 .hide-me {
