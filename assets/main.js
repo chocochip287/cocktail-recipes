@@ -23,7 +23,7 @@ var jokesTextDiv = document.createElement("div");
 function searchCheck() {
   ingredientName = document.getElementById("searchBar").value;
   if (ingredientName === "") {
-    searchBar.setAttribute("placeholder", "You can't search for no ingredient!");
+    searchBar.setAttribute("placeholder", "You can't have a blank search!");
   } else {
     getDrinks();
   }
@@ -57,8 +57,7 @@ function renderDrinks() {
     var drinkName = document.createElement("p");
     // modify
 
-    drinkName.textContent = drinkResults.drinks[i].strDrink
-
+    drinkName.textContent = drinkResults.drinks[i].strDrink;
 
     document.body.append(drinkName)
   }
@@ -92,6 +91,7 @@ function jokesTransition() {
   // class switches to hide pre-search screen and start the timer
   mainDiv.setAttribute("class", "hide-me");
   jokesDiv.setAttribute("class", "jokes-div");
+  jokesDiv.setAttribute("style", "display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;" )
   jokesDiv.appendChild(jokesTextDiv);
   jokesTextDiv.textContent = "Loading your results in.. " + timeLeft + " seconds";
   var jokesTimer = setInterval(function () {
@@ -114,16 +114,17 @@ function jokesTransition() {
 
 function afterTimeout(){
   mainDiv.setAttribute("class", "hide-me");
- jokesDiv.setAttribute("class", "hide-me");
- renderDrinks()
+  jokesDiv.setAttribute("class", "hide-me");
+  jokesDiv.setAttribute("style", "display: none;")
+  renderDrinks()
 }
 
 
 // function to transition from the jokes screen to the final content
 function resultsTransition() {
-  // test text
-  console.log("Hello there! The results transition calls properly!")
-
+  // calls the random numbers function to determine the drinks to be displayed
+  getRandomNumbers();
+  // set up formatting for the results page below
 }
 // Second API (Project requires at least 2)
 
@@ -155,7 +156,9 @@ fetch(requestUrl)
         // create elements on HTML
        var jokeName = document.createElement("p");
         // modify
-        jokeName.textContent = data.joke; 
+        jokeName.textContent = data.joke;
+        jokeName.setAttribute("style", "margin-bottom: 15px;")
+        jokePEl.setAttribute("style", "margin-bottom: 10px;")
       jokePEl.appendChild(jokeName); 
       
     });
