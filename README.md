@@ -37,7 +37,7 @@ Click on the "what can I make?" button.
 
 
 The following image shows the finished product
-![The screen shows pictures of propsed drinks based on the selected ingredients.](./assets/img/image1.jpeg)
+![The screen shows pictures of propsed drinks based on the selected ingredients.](./assets/img/landing.jpeg)
 
 
 
