@@ -51,6 +51,32 @@ body {
     height: 90vh;
 }
 
+.second-section {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    justify-content: flex-start;
+    border: 2px solid white;
+    height: 100vh;
+}
+
+#ingredientDiv {
+   display: flex;
+   flex-direction: row;
+   border: 2px solid purple;
+   width: 33vw;
+   height: 95vh;
+}
+
+#drinkContainer {
+    display: flex;
+    flex-direction: row;
+    float: right;
+    border: 2px solid green;
+    width: 100vw;
+    height: 95vh;
+}
+
 #searchBar {
     width: 50%;
     /* font-size: 18px;*/

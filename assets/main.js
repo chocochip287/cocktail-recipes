@@ -5,6 +5,9 @@ var mainDiv = document.querySelector("#main-content")
 var jokesDiv = document.querySelector("#jokes")
 var searchBar = document.querySelector("#searchBar");
 var header = document.querySelector("#header")
+var sec2Div = document.querySelector("#section-2-div");
+var ingredientDiv = document.querySelector("#ingredientDiv");
+var drinkContainer = document.querySelector("#drinkContainer");
 //Joke paragraph 
 var jokePEl = document.querySelector("#jokeP");
 // utility/functionality variables 
@@ -15,7 +18,7 @@ var ingredientName = "";
 // establishing drinkResults in the global scope
 var drinkResults;
 // variable for the timer for the joke screen transition
-var timeLeft = 10;
+var timeLeft = 1;
 // variable to append text into the jokes div
 var jokesTextDiv = document.createElement("div");
 
@@ -88,8 +91,6 @@ function getRandomNumbers() {
 
 function jokesTransition() {
   getJokes();
-  // test text
-  console.log ("hello there!");
   // class switches to hide pre-search screen and start the timer
   mainDiv.setAttribute("class", "hide-me");
   jokesDiv.setAttribute("class", "jokes-div");
@@ -107,8 +108,8 @@ function jokesTransition() {
       jokesTextDiv.textContent = "Your search results are.."
       resultsTransition();
       clearInterval(jokesTimer);
-      setTimeout(afterTimeout , 3000);
-      
+      // setTimeout(afterTimeout , 3000);
+      afterTimeout();
     }
   }, 1000);
 }
@@ -125,6 +126,7 @@ function resultsTransition() {
   // calls the random numbers function to determine the drinks to be displayed
   getRandomNumbers();
   // set up formatting for the results page below
+  sec2Div.setAttribute("class", "second-section");
 }
 // Second API (Project requires at least 2)
 
@@ -151,7 +153,7 @@ fetch(requestUrl)
     .then(function (data) {
   //Render the Jokes
       //  renderJokes(data);
-    console.log(data.joke);
+    //console.log(data.joke);
         // create elements on HTML
        var jokeName = document.createElement("p");
         // modify
