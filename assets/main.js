@@ -110,7 +110,7 @@ function jokesTransition() {
       setTimeout(afterTimeout , 3000);
       
     }
-  }, 100);
+  }, 800);
 }
 
 function afterTimeout(){
@@ -167,7 +167,7 @@ fetch(requestUrl)
 var searchedIngredientsArray = [];
 // This function adds the keyword in the search bar to the local storage as a string
 function addToStorage() {
-  var searchedIngredientsArray = JSON.parse(localStorage.getItem("searchedDrinks"))
+  var searchedIngredientsArray = JSON.parse(localStorage.getItem("searchedDrinks")) || [];
   var searchedIngredient = document.querySelector("#searchBar").value;
   searchedIngredientsArray.push(searchedIngredient);
   localStorage.setItem(
