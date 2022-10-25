@@ -100,6 +100,14 @@ body {
     justify-content: center;
 }
 
+.button{
+    background-color: rgb(16, 43, 68);
+}
+
+.dropdown-content{
+    background-color: rgb(16, 43, 68);
+}
+
 #results1, #results2, #results3, #results4, #results5 {
     border-bottom: 2px solid rgb(48, 75, 100);
     height: 20vh;

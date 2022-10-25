@@ -47,7 +47,7 @@ function getDrinks() {
     });
 
     jokesTransition();
-  // addToStorage();
+  addToStorage();
 }
 
 // event that triggers the search for the ingredient and also begins the transition between screens
@@ -111,7 +111,7 @@ function jokesTransition() {
       // setTimeout(afterTimeout , 3000);
       afterTimeout();
     }
-  }, 1000);
+  }, 800);
 }
 
 function afterTimeout(){
@@ -169,6 +169,7 @@ fetch(requestUrl)
 var searchedIngredientsArray = [];
 // This function adds the keyword in the search bar to the local storage as a string
 function addToStorage() {
+  var searchedIngredientsArray = JSON.parse(localStorage.getItem("searchedDrinks")) || [];
   var searchedIngredient = document.querySelector("#searchBar").value;
   searchedIngredientsArray.push(searchedIngredient);
   localStorage.setItem(
@@ -187,7 +188,8 @@ function renderStorage() {
   // looped the searched ingredients array to add a button for each string in the array
   for (var i = 0; i < searchedIngredientsArray.length; i++) {
     // create
-    var savedIngredient = document.createElement("button");
+    var savedIngredient = document.createElement("div");
+    var savedIngredient = document.createElement("div");
     // modify
     savedIngredient.innerHTML = searchedIngredientsArray[i];
     savedIngredient.setAttribute("class", "historyButtons");

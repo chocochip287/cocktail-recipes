@@ -19,12 +19,40 @@
                 <input type="text" id="searchBar" placeholder="type your ingredient here" \>
                 <button id="getDrinks">What can I make?</button>
 
-                <p class="" id="historyP">
+
+                <div class="dropdown is-hoverable">
+                    <div class="dropdown-trigger">
+                      <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
+                        <span>Your previous searches</span>
+                        <span class="icon is-small">
+                          <i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                      </button>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+                      <div class="dropdown-content">
+                        <div id="historyDiv" class="dropdown-item">
+                           
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                <!-- <p class="" id="historyP">
                     Your previous searches ^
-                </p>
-                <div class="hide-me" id="historyDiv">
+                </p> -->
+
+
+
+
+
+
+
+                <!-- <div class="hide-me" id="historyDiv">
                     aaaaa
-                </div>
+                </div> -->
             </div>
 
             <!-- .jokes-div when visible -->
