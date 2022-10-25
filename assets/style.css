@@ -72,7 +72,10 @@ body {
     justify-content: center;
 }
 
-#historyDiv{
-    display: flex;
-    flex-direction: column;
+.button{
+    background-color: rgb(16, 43, 68);
+}
+
+.dropdown-content{
+    background-color: rgb(16, 43, 68);
 }
