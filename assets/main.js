@@ -110,7 +110,7 @@ function jokesTransition() {
       setTimeout(afterTimeout , 3000);
       
     }
-  }, 100);
+  }, 800);
 }
 
 function afterTimeout(){
