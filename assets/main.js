@@ -9,6 +9,8 @@ var sec2Div = document.querySelector("#section-2-div");
 var ingredientDiv = document.querySelector("#ingredientDiv");
 var drinkContainer = document.querySelector("#drinkContainer");
 var footerEl = document.getElementById("return")
+
+// var historyBtn = document.querySelector(".")
 //Joke paragraph 
 var jokePEl = document.querySelector("#jokeP");
 // utility/functionality variables 
@@ -47,7 +49,7 @@ function getDrinks() {
       drinkResults = data;
     });
 
-    jokesTransition();
+  jokesTransition();
   addToStorage();
 }
 
@@ -171,8 +173,15 @@ fetch(requestUrl)
 var searchedIngredientsArray = [];
 // This function adds the keyword in the search bar to the local storage as a string
 function addToStorage() {
-  var searchedIngredientsArray = JSON.parse(localStorage.getItem("searchedDrinks")) || [];
   var searchedIngredient = document.querySelector("#searchBar").value;
+  var searchedIngredientsArray = JSON.parse(localStorage.getItem("searchedDrinks")) || [];
+  if (searchedIngredientsArray.length > 4) {
+    searchedIngredientsArray.shift();
+  }
+  if(searchedIngredientsArray.includes(ingredientName) === true){
+    return;
+  }else {
+  
   searchedIngredientsArray.push(searchedIngredient);
   localStorage.setItem(
     "searchedDrinks",
@@ -180,18 +189,20 @@ function addToStorage() {
   );
   renderStorage();
 }
+}
 
 // This function renders ingredient search history on the page
 function renderStorage() {
   var searchedIngredientsArray = JSON.parse(localStorage.getItem("searchedDrinks")) || [];
-    localStorage.getItem("searchedDrinks")
+ 
+  localStorage.getItem("searchedDrinks")
   // This method clears out the buttons before adding a new string to the page
   document.getElementById("historyDiv").innerHTML = "";
   // looped the searched ingredients array to add a button for each string in the array
   for (var i = 0; i < searchedIngredientsArray.length; i++) {
     // create
-    var savedIngredient = document.createElement("div");
-    var savedIngredient = document.createElement("div");
+    var savedIngredient = document.createElement("button");
+
     // modify
     savedIngredient.innerHTML = searchedIngredientsArray[i];
     savedIngredient.setAttribute("class", "historyButtons");
@@ -199,6 +210,7 @@ function renderStorage() {
     document.getElementById("historyDiv").append(savedIngredient);
   }
 }
+
 
 function renderReturnBtn(){
 footerEl.setAttribute("class", "")

@@ -122,3 +122,13 @@ body {
     bottom: 2px;
     left: 5px
 }
+
+button{
+    border-color: white
+}
+
+#historyDiv{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
