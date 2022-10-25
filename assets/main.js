@@ -1,17 +1,19 @@
 // variables to target specific classes/IDs
 var drinkBox = document.querySelector("#drinkContainer");
 var showDrinks = document.querySelector("#getDrinks");
-var mainDiv = document.querySelector("#main-content")
-var jokesDiv = document.querySelector("#jokes")
+var mainDiv = document.querySelector("#main-content");
+var jokesDiv = document.querySelector("#jokes");
 var searchBar = document.querySelector("#searchBar");
-var header = document.querySelector("#header")
+var header = document.querySelector("#header");
 var sec2Div = document.querySelector("#section-2-div");
 var ingredientDiv = document.querySelector("#ingredientDiv");
 var drinkContainer = document.querySelector("#drinkContainer");
-var footerEl = document.getElementById("return")
-//Joke paragraph 
+var footerEl = document.getElementById("return");
+
+// var historyBtn = document.querySelector(".")
+//Joke paragraph
 var jokePEl = document.querySelector("#jokeP");
-// utility/functionality variables 
+// utility/functionality variables
 // empty array to house random numbers used to select cocktails from the API
 var randomNumbers = [];
 // variable to store the user's ingredient in global scope
@@ -35,19 +37,21 @@ function searchCheck() {
 
 // function that fetches a drink list based on the user's seached ingredient
 function getDrinks() {
-  var requestUrl = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + ingredientName;
+  var requestUrl =
+    "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" +
+    ingredientName;
 
   fetch(requestUrl)
     .then(function (response) {
       return response.json();
     })
 
-    .then(function(data) {
+    .then(function (data) {
       // renderDrinks(data)
       drinkResults = data;
     });
 
-    jokesTransition();
+  jokesTransition();
   addToStorage();
 }
 
@@ -75,18 +79,17 @@ function getRandomNumbers() {
   randomNumbers = [];
   // determining how many numbers to generate based on the length of drinkData, then adding those numbers to randomNumbers
   if (drinkResults.drinks.length < 5) {
-    for (i=0; i < drinkResults.drinks.length; i++) {
+    for (i = 0; i < drinkResults.drinks.length; i++) {
       var random = Math.floor(Math.random() * drinkResults.drinks.length);
       randomNumbers.push(random);
     }
-  } 
-  else {
-    for (i=0; i < 5; i++) {
+  } else {
+    for (i = 0; i < 5; i++) {
       var random = Math.floor(Math.random() * drinkResults.drinks.length);
       randomNumbers.push(random);
-      }
     }
   }
+}
 
 // function to transition content from the search screen
 
@@ -95,18 +98,24 @@ function jokesTransition() {
   // class switches to hide pre-search screen and start the timer
   mainDiv.setAttribute("class", "hide-me");
   jokesDiv.setAttribute("class", "jokes-div");
-  jokesDiv.setAttribute("style", "display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;" )
+  jokesDiv.setAttribute(
+    "style",
+    "display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;"
+  );
   jokesDiv.appendChild(jokesTextDiv);
-  jokesTextDiv.textContent = "Loading your results in.. " + timeLeft + " seconds";
+  jokesTextDiv.textContent =
+    "Loading your results in.. " + timeLeft + " seconds";
   var jokesTimer = setInterval(function () {
     if (timeLeft > 1) {
-      jokesTextDiv.textContent = "Loading your results in.. " + timeLeft + " seconds";
+      jokesTextDiv.textContent =
+        "Loading your results in.. " + timeLeft + " seconds";
       timeLeft--;
     } else if (timeLeft === 1) {
-      jokesTextDiv.textContent = "Loading your results in.. " + timeLeft + " second";
+      jokesTextDiv.textContent =
+        "Loading your results in.. " + timeLeft + " second";
       timeLeft--;
     } else {
-      jokesTextDiv.textContent = "Your search results are.."
+      jokesTextDiv.textContent = "Your search results are..";
       resultsTransition();
       clearInterval(jokesTimer);
       // setTimeout(afterTimeout , 3000);
@@ -115,12 +124,12 @@ function jokesTransition() {
   }, 800);
 }
 
-function afterTimeout(){
+function afterTimeout() {
   mainDiv.setAttribute("class", "hide-me");
   jokesDiv.setAttribute("class", "hide-me");
-  jokesDiv.setAttribute("style", "display: none;")
-  renderDrinks()
-  renderReturnBtn()
+  jokesDiv.setAttribute("style", "display: none;");
+  renderDrinks();
+  renderReturnBtn();
 }
 
 // function to transition from the jokes screen to the final content
@@ -138,14 +147,12 @@ fetch(requestUrl)
   .then(function (response) {
     return response.json();
   })
-  .then(function (data) {
+  .then(function (data) {});
 
-  });
-
-  
-  //Function for the Jokes API
- function getJokes() {
-  var requestJokesUrl = "https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&contains=Bar&amount=1";
+//Function for the Jokes API
+function getJokes() {
+  var requestJokesUrl =
+    "https://v2.jokeapi.dev/joke/Programming?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&contains=Bar&amount=1";
 
   //Fetch the API
   fetch(requestJokesUrl)
@@ -153,64 +160,104 @@ fetch(requestUrl)
       return response.json();
     })
     .then(function (data) {
-  //Render the Jokes
+      //Render the Jokes
       //  renderJokes(data);
-    //console.log(data.joke);
-        // create elements on HTML
-       var jokeName = document.createElement("p");
-        // modify
-        jokeName.textContent = data.joke;
-        jokeName.setAttribute("style", "margin-bottom: 15px;")
-        jokePEl.setAttribute("style", "margin-bottom: 10px;")
-      jokePEl.appendChild(jokeName); 
-      
+      //console.log(data.joke);
+      // create elements on HTML
+      var jokeName = document.createElement("p");
+      // modify
+      jokeName.textContent = data.joke;
+      jokeName.setAttribute("style", "margin-bottom: 15px;");
+      jokePEl.setAttribute("style", "margin-bottom: 10px;");
+      jokePEl.appendChild(jokeName);
     });
- }
+}
 
 // Set and empty searched ingredients Array to global
 var searchedIngredientsArray = [];
 // This function adds the keyword in the search bar to the local storage as a string
 function addToStorage() {
-  var searchedIngredientsArray = JSON.parse(localStorage.getItem("searchedDrinks")) || [];
   var searchedIngredient = document.querySelector("#searchBar").value;
-  searchedIngredientsArray.push(searchedIngredient);
-  localStorage.setItem(
-    "searchedDrinks",
-    JSON.stringify(searchedIngredientsArray)
-  );
-  renderStorage();
+  var searchedIngredientsArray =
+    JSON.parse(localStorage.getItem("searchedDrinks")) || [];
+  if (searchedIngredientsArray.length > 4) {
+    searchedIngredientsArray.shift();
+  }
+  if (searchedIngredientsArray.includes(ingredientName) === true) {
+    return;
+  } else {
+    searchedIngredientsArray.push(searchedIngredient);
+    localStorage.setItem(
+      "searchedDrinks",
+      JSON.stringify(searchedIngredientsArray)
+    );
+    renderStorage();
+  }
 }
 
 // This function renders ingredient search history on the page
 function renderStorage() {
-  var searchedIngredientsArray = JSON.parse(localStorage.getItem("searchedDrinks")) || [];
-    localStorage.getItem("searchedDrinks")
+  var searchedIngredientsArray =
+    JSON.parse(localStorage.getItem("searchedDrinks")) || [];
+
+  localStorage.getItem("searchedDrinks");
   // This method clears out the buttons before adding a new string to the page
   document.getElementById("historyDiv").innerHTML = "";
   // looped the searched ingredients array to add a button for each string in the array
   for (var i = 0; i < searchedIngredientsArray.length; i++) {
     // create
-    var savedIngredient = document.createElement("div");
-    var savedIngredient = document.createElement("div");
+    var savedIngredient = document.createElement("button");
+
     // modify
     savedIngredient.innerHTML = searchedIngredientsArray[i];
-    savedIngredient.setAttribute("class", "historyButtons");
+    savedIngredient.setAttribute("id", "historyButtons" + [i]);
     // append
     document.getElementById("historyDiv").append(savedIngredient);
   }
+
+  // Had to do some hardcoding for this for a lack of better solution. Will try to improve later
+  var button0El = document.getElementById("historyButtons4");
+  var button1El = document.getElementById("historyButtons3");
+  var button2El = document.getElementById("historyButtons2");
+  var button3El = document.getElementById("historyButtons1");
+  var button4El = document.getElementById("historyButtons0");
+
+  if (button0El === null) {
+  } else {
+    button0El.addEventListener("click", transferBtn);
+  }
+  if (button1El === null) {
+  } else {
+    button1El.addEventListener("click", transferBtn);
+  }
+  if (button2El === null) {
+  } else {
+    button2El.addEventListener("click", transferBtn);
+  }
+  if (button3El === null) {
+  } else {
+    button3El.addEventListener("click", transferBtn);
+  }
+  if (button4El === null) {
+  } else {
+    button4El.addEventListener("click", transferBtn);
+  }
 }
 
-function renderReturnBtn(){
-footerEl.setAttribute("class", "")
-footerEl.textContent = "Click here to return to main page"
-footerEl.addEventListener("click", returnToMain)
- }
+function transferBtn(event) {
+  document.querySelector("#searchBar").value = event.target.innerHTML;
+}
 
+function renderReturnBtn() {
+  footerEl.setAttribute("class", "");
+  footerEl.textContent = "Click here to return to main page";
+  footerEl.addEventListener("click", returnToMain);
+}
 
- function returnToMain(){
-  footerEl.setAttribute("class", "hide-me")
-  mainDiv.setAttribute("class", "main-div")
-  sec2Div.setAttribute("class", "hide-me")
- }
+function returnToMain() {
+  footerEl.setAttribute("class", "hide-me");
+  mainDiv.setAttribute("class", "main-div");
+  sec2Div.setAttribute("class", "hide-me");
+}
 // Called function in the end to execute as soon as page loads
 renderStorage();
