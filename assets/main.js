@@ -9,6 +9,31 @@ var sec2Div = document.querySelector("#section-2-div");
 var ingredientDiv = document.querySelector("#ingredientDiv");
 var drinkContainer = document.querySelector("#drinkContainer");
 var footerEl = document.getElementById("return");
+var r1 = document.getElementById("results1");
+var r1Img = document.createElement("img");
+var r1NameDiv = document.createElement("div");
+var r1LinkDiv = document.createElement("div");
+var r1AEl = document.createElement("a");
+var r2 = document.getElementById("results2");
+var r2Img = document.createElement("img");
+var r2NameDiv = document.createElement("div");
+var r2LinkDiv = document.createElement("div");
+var r2AEl = document.createElement("a");
+var r3 = document.getElementById("results3");
+var r3Img = document.createElement("img");
+var r3NameDiv = document.createElement("div");
+var r3LinkDiv = document.createElement("div");
+var r3AEl = document.createElement("a");
+var r4 = document.getElementById("results4");
+var r4Img = document.createElement("img");
+var r4NameDiv = document.createElement("div");
+var r4LinkDiv = document.createElement("div");
+var r4AEl = document.createElement("a");
+var r5 = document.getElementById("results5");
+var r5Img = document.createElement("img");
+var r5NameDiv = document.createElement("div");
+var r5LinkDiv = document.createElement("div");
+var r5AEl = document.createElement("a");
 
 // var historyBtn = document.querySelector(".")
 //Joke paragraph
@@ -136,8 +161,77 @@ function afterTimeout() {
 function resultsTransition() {
   // calls the random numbers function to determine the drinks to be displayed
   getRandomNumbers();
-  // set up formatting for the results page below
+  // section #2 div becomes visible
   sec2Div.setAttribute("class", "second-section");
+  // content setup
+  if (drinkResults.drinks.length === 1) {
+    r1.appendChild(r1Img);
+    r1.appendChild(r1LinkDiv);
+    r1.appendChild(r1NameDiv);
+    r1LinkDiv.appendChild(r1AEl);
+  } else if (drinkResults.drinks.length === 2) {
+    r1.appendChild(r1Img);
+    r1.appendChild(r1LinkDiv);
+    r1.appendChild(r1NameDiv);
+    r1LinkDiv.appendChild(r1AEl);
+    r2.appendChild(r2Img);
+    r2.appendChild(r2LinkDiv);
+    r2.appendChild(r2NameDiv);
+    r2LinkDiv.appendChild(r2AEl);
+  } else if (drinkResults.drinks.length === 3) {
+    r1.appendChild(r1Img);
+    r1.appendChild(r1LinkDiv);
+    r1.appendChild(r1NameDiv);
+    r1LinkDiv.appendChild(r1AEl);
+    r2.appendChild(r2Img);
+    r2.appendChild(r2LinkDiv);
+    r2.appendChild(r2NameDiv);
+    r2LinkDiv.appendChild(r2AEl);
+    r3.appendChild(r3Img);
+    r3.appendChild(r3LinkDiv);
+    r3.appendChild(r3NameDiv);
+    r3LinkDiv.appendChild(r3AEl);
+  } else if (drinkResults.drinks.length === 4) {
+    r1.appendChild(r1Img);
+    r1.appendChild(r1LinkDiv);
+    r1.appendChild(r1NameDiv);
+    r1LinkDiv.appendChild(r1AEl);
+    r2.appendChild(r2Img);
+    r2.appendChild(r2LinkDiv);
+    r2.appendChild(r2NameDiv);
+    r2LinkDiv.appendChild(r2AEl);
+    r3.appendChild(r3Img);
+    r3.appendChild(r3LinkDiv);
+    r3.appendChild(r3NameDiv);
+    r3LinkDiv.appendChild(r3AEl);
+    r4.appendChild(r4Img);
+    r4.appendChild(r4LinkDiv);
+    r4.appendChild(r4NameDiv);
+    r4LinkDiv.appendChild(r4AEl);
+  } else if (drinkResults.drinks.length >= 5) {
+    r1.appendChild(r1Img);
+    r1.appendChild(r1LinkDiv);
+    r1.appendChild(r1NameDiv);
+    r1LinkDiv.appendChild(r1AEl);
+    r2.appendChild(r2Img);
+    r2.appendChild(r2LinkDiv);
+    r2.appendChild(r2NameDiv);
+    r2LinkDiv.appendChild(r2AEl);
+    r3.appendChild(r3Img);
+    r3.appendChild(r3LinkDiv);
+    r3.appendChild(r3NameDiv);
+    r3LinkDiv.appendChild(r3AEl);
+    r4.appendChild(r4Img);
+    r4.appendChild(r4LinkDiv);
+    r4.appendChild(r4NameDiv);
+    r4LinkDiv.appendChild(r4AEl);
+    r5.appendChild(r5Img);
+    r5.appendChild(r5LinkDiv);
+    r5.appendChild(r5NameDiv);
+    r5LinkDiv.appendChild(r5AEl);
+  } else {
+    r1.textContent = "Looks like you have no results for your ingredient. Check your spelling for potential typos or try another ingredient."
+  }
 }
 // Second API (Project requires at least 2)
 
