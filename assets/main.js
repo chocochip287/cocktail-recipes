@@ -8,6 +8,7 @@ var header = document.querySelector("#header")
 var sec2Div = document.querySelector("#section-2-div");
 var ingredientDiv = document.querySelector("#ingredientDiv");
 var drinkContainer = document.querySelector("#drinkContainer");
+var footerEl = document.getElementById("return")
 //Joke paragraph 
 var jokePEl = document.querySelector("#jokeP");
 // utility/functionality variables 
@@ -119,6 +120,7 @@ function afterTimeout(){
   jokesDiv.setAttribute("class", "hide-me");
   jokesDiv.setAttribute("style", "display: none;")
   renderDrinks()
+  renderReturnBtn()
 }
 
 // function to transition from the jokes screen to the final content
@@ -198,5 +200,17 @@ function renderStorage() {
   }
 }
 
+function renderReturnBtn(){
+footerEl.setAttribute("class", "")
+footerEl.textContent = "Click here to return to main page"
+footerEl.addEventListener("click", returnToMain)
+ }
+
+
+ function returnToMain(){
+  footerEl.setAttribute("class", "hide-me")
+  mainDiv.setAttribute("class", "main-div")
+  sec2Div.setAttribute("class", "hide-me")
+ }
 // Called function in the end to execute as soon as page loads
 renderStorage();
