@@ -108,9 +108,30 @@ body {
     background-color: rgb(16, 43, 68);
 }
 
+#ingredientDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 #results1, #results2, #results3, #results4, #results5 {
+    display: flex;
+    float: left;
     border-bottom: 2px solid rgb(48, 75, 100);
     height: 20vh;
+}
+
+#results1 div, #results2 div, #results3 div, #results4 div, #results5 div {
+    border-left: 2px solid rgb(48, 75, 100);
+    border-bottom: 2px solid rgb(48, 75, 100);
+}
+
+img {
+    margin: 5px; 
+    /*width: 16vw; */
+    height: 17vh;
+    border: 2px solid white;
 }
 
 #getDrinks{

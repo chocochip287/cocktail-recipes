@@ -9,6 +9,7 @@ var sec2Div = document.querySelector("#section-2-div");
 var ingredientDiv = document.querySelector("#ingredientDiv");
 var drinkContainer = document.querySelector("#drinkContainer");
 var footerEl = document.getElementById("return");
+var ingNameP = document.getElementById("ingNameId");
 var r1 = document.getElementById("results1");
 var r1Img = document.createElement("img");
 var r1NameDiv = document.createElement("div");
@@ -163,7 +164,21 @@ function resultsTransition() {
   getRandomNumbers();
   // section #2 div becomes visible
   sec2Div.setAttribute("class", "second-section");
-  // content setup
+  ingNameP.textContent = ingredientName + "!";
+  // content attribute and text setup
+  r1Img.setAttribute("src", drinkResults.drinks[randomNumbers[0]].strDrinkThumb);
+  r1Img.setAttribute("alt", "A serving of " + drinkResults.drinks[randomNumbers[0]].strDrink)
+  r1
+  r2Img.setAttribute("src", drinkResults.drinks[randomNumbers[1]].strDrinkThumb);
+  r2Img.setAttribute("alt", "A serving of " + drinkResults.drinks[randomNumbers[1]].strDrink)
+  r3Img.setAttribute("src", drinkResults.drinks[randomNumbers[2]].strDrinkThumb);
+  r3Img.setAttribute("alt", "A serving of " + drinkResults.drinks[randomNumbers[2]].strDrink)
+  r4Img.setAttribute("src", drinkResults.drinks[randomNumbers[3]].strDrinkThumb);
+  r4Img.setAttribute("alt", "A serving of " + drinkResults.drinks[randomNumbers[3]].strDrink)
+  r5Img.setAttribute("src", drinkResults.drinks[randomNumbers[4]].strDrinkThumb);
+  r5Img.setAttribute("alt", "A serving of " + drinkResults.drinks[randomNumbers[4]].strDrink)
+  // r1Img.setAttribute("style", "margin: 5px; width: 18vh; height: 18vh;");
+  // content element appends
   if (drinkResults.drinks.length === 1) {
     r1.appendChild(r1Img);
     r1.appendChild(r1LinkDiv);
