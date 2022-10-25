@@ -71,3 +71,8 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+#historyDiv{
+    display: flex;
+    flex-direction: column;
+}
