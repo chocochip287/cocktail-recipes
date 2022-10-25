@@ -12,8 +12,7 @@ As a person who has an active social life and who has frequent guests visiting, 
 - [Mock-Up](#mock-up)
 - [Finished Product](#finished-product)
 - [Credits](#credits)
-- [Specific First Tasks Assigned](#specific-first-tasks-assigned)
-- [Roles for Contributors](#roles-for-contributors)
+- [Specific-Project-tasks](#specific-project-tasks)
 - [APIs Used](#apis-used)
 - [License](#license)
 
