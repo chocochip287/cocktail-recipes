@@ -49,7 +49,7 @@ var ingredientName = "";
 // establishing drinkResults in the global scope
 var drinkResults;
 // variable for the timer for the joke screen transition
-var timeLeft = 1;
+var timeLeft = 10;
 // variable to append text into the jokes div
 var jokesTextDiv = document.createElement("div");
 
@@ -150,10 +150,10 @@ function jokesTransition() {
       jokesTextDiv.textContent = "Your search results are..";
       resultsTransition();
       clearInterval(jokesTimer);
-      // setTimeout(afterTimeout , 3000);
+      setTimeout(afterTimeout , 3000);
       afterTimeout();
     }
-  }, 800);
+  }, 1000);
 }
 
 function afterTimeout() {
@@ -161,6 +161,7 @@ function afterTimeout() {
   jokesDiv.setAttribute("class", "hide-me");
   jokesDiv.setAttribute("style", "display: none;");
   renderDrinks();
+  timeLeft = 9;
   renderReturnBtn();
 }
 
