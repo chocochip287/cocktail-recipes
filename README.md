@@ -2,7 +2,7 @@
 
 
 # User Story
-As a person who has an active social life and who has frequent guests visiting, I want to be able to use an app where I can look for ingredients I have at home, so I can prepare different drinks for my guests.
+As a person who has an active social life and hosts guests frequently, I want to be able to use an app where I can look for ingredients I have at home so that I can frequently surprise guests with new concoctions.
 
 
 
@@ -18,14 +18,13 @@ As a person who has an active social life and who has frequent guests visiting, 
 
 
 ## Usage
-1. Open the  cocktail app. In the search bar, enter the ingredient you would like to use to prepare your drink.
-Click on the "What can I make?" button.
+1. From the Cocktail Findifier's home screen, enter the ingredient you would like to use to prepare your drink in the search bar.
 
+2.Click on the "What can I make?" button.
 
 ![The screen shows a picture of the main page.](./assets/img/mainscreen.png)
 
-
-2. The application will display a joke while the userwaits for their results with the many differnet drinks that incude the ingredients you selected.
+2. The application will display a joke while the user waits for their results.
 
 ![The screen shows a picture of the transition with a joke.](./assets/img/jokescreen.png)
 
@@ -33,11 +32,11 @@ Click on the "What can I make?" button.
 
 ![The screen shows pictures of propsed drinks based on the searched ingredients.](./assets/img/drinkrenderscreen.png)
 
-4. Click the "Return to main" button to go back to the first screen.
+4. Click the "Return to main page" button at the bottom left of the search results to return to the home screen.
 
 ![The screen shows a picture of an arrow pointing to the "Return to main" button.](./assets/img/returntomain.png)
 
-5. Hover over "Your previous searches" to see a list of you most recent searches. Click it to paste it to the search bar.
+5. Hovering over "Your previous searches" displays a list of you most recent searches. Click on one of the listed ingredients to paste it to the search bar.
 
 ![The screen shows a picture of the recent searches when the button "Your previous searches" is hovered over.](./assets/img/localstorage.png)
 
@@ -55,14 +54,14 @@ The following image shows the finished product
 
 ## Finished-product
 
-Here is the link of the finished work: 
+Here is the link to the finished work: 
 
 [Deployed website](https://chocochip287.github.io/cocktail-recipes/)|
 
 
 ## Credits
 
-Matt Goldsmith, Allan Elias, Angelica Ibarra, Saeed Elmakki|
+Matt Goldsmith, Allan Elias, Angelica Ibarra, Saeed Elmakki
 
 
 [TheCocktailDB ](https://www.thecocktaildb.com/) |
@@ -74,14 +73,13 @@ Matt Goldsmith, Allan Elias, Angelica Ibarra, Saeed Elmakki|
 
 ## Specific-Project-tasks
 
-Matt Goldsmith -  Project structure, technical organization, and stylization -
+Matt Goldsmith -  Repository Admin, User Experience/UX (project structure, organization, flow, and stylization) -
  connected the app's individual elements into a cohesive and functional user experience with supporting JavaScript functions and uniform presentation
 
 Allan Elias - API call setup, local storage management/rendering and general debugging - got access to the API's used on the project, 
 setup the local storage to access drink search history through a dropdown menu and fixed some styling bugs.
 
-Angelica Ibarra - README Initiation and maintainence. Queried an API to pull jokes connecting programming to drinks, bartending and mixology and render them into a usable format for the app. 
-Implemented the jokee data into leading/transition screen via HTML and JavaScript to introduce humor and levity into the user's experience.
+Angelica Ibarra - README Author and Joke API configuration - Queried an API to pull jokes connecting programming to drinks, bartending and mixology and render them into a usable format for the app. Implemented the joke data into leading/transition screen via HTML and JavaScript to introduce humor and levity into the user's experience.
 
 Saeed Elmakki - Initial HTML draft and Final Presentation.
 
