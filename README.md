@@ -65,8 +65,6 @@ Here is the link to the finished work:
 
 [TheCocktailDB ](https://www.thecocktaildb.com/) |
 [JokeAPI ](https://v2.jokeapi.dev/) |
-[Array.from() Tutorial ](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from) |
-[Array.prototype.push() Tutorial ](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push) |
 [TheCocktailDB ](https://www.thecocktaildb.com/) |
 [Bulma](https://bulma.io/) |
 
