@@ -61,7 +61,9 @@ Here is the link to the finished work:
 
 ## Technologies-Used
 
-
+HTML |
+CSS |
+JavaScript |
 [TheCocktailDB ](https://www.thecocktaildb.com/) |
 [JokeAPI ](https://v2.jokeapi.dev/) |
 [Bulma](https://bulma.io/)
