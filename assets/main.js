@@ -36,7 +36,7 @@ var r5NameDiv = document.createElement("div");
 var r5LinkDiv = document.createElement("div");
 var r5AEl = document.createElement("a");
 var ingredID = ''
-
+var jokeName = document.createElement("p");
 
 // var historyBtn = document.querySelector(".")
 //Joke paragraph
@@ -151,10 +151,10 @@ function jokesTransition() {
       jokesTextDiv.textContent = "Your search results are..";
       resultsTransition();
       clearInterval(jokesTimer);
-      setTimeout(afterTimeout , 3000);
+      // setTimeout(afterTimeout , 3000);
       afterTimeout();
     }
-  }, 1000);
+  }, 500);
 }
 
 function afterTimeout() {
@@ -337,10 +337,12 @@ function getJokes() {
     .then(function (data) {
       //Render the Jokes
       //  renderJokes(data);
+      
       //console.log(data.joke);
       // create elements on HTML
-      var jokeName = document.createElement("p");
+      // var jokeName = document.createElement("p");
       // modify
+      jokeName.textContent = "";
       jokeName.textContent = data.joke;
       jokeName.setAttribute("style", "margin-bottom: 15px;");
       jokePEl.setAttribute("style", "margin-bottom: 10px;");
