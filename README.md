@@ -65,7 +65,6 @@ Here is the link to the finished work:
 
 [TheCocktailDB ](https://www.thecocktaildb.com/) |
 [JokeAPI ](https://v2.jokeapi.dev/) |
-[TheCocktailDB ](https://www.thecocktaildb.com/) |
 [Bulma](https://bulma.io/) |
 
 
