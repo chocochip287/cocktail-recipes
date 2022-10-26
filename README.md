@@ -2,19 +2,18 @@
 
 
 # User Story
-As a person who has an active social life and hosts guests frequently, I want to be able to use an app where I can look for ingredients I have at home so that I can frequently surprise guests with new concoctions.
+As a person who has an active social life and hosts guests frequently, I want to be able to use an app where I can look for cocktails made from ingredients I have at home so that I can frequently surprise guests with new concoctions.
 
 
 
 ## Table of Contents 
 
-- [Usage](#usage)
-- [Mock-Up](#mock-up)
-- [Finished Product](#finished-product)
-- [Credits](#credits)
-- [Specific-Project-tasks](#specific-project-tasks)
-- [APIs Used](#apis-used)
-- [License](#license)
+- [Usage](#Usage)
+- [Mock-Up](#Mock-Up)
+- [Finished Product](#Finished-product)
+- [Credits](#Credits)
+- [Technologies Used](#Technologies-Used)
+- [License](#License)
 
 
 ## Usage
@@ -57,15 +56,15 @@ The following image shows the finished product
 
 Here is the link to the finished work: 
 
-[Deployed website](https://chocochip287.github.io/cocktail-recipes/)|
+[Deployed website](https://chocochip287.github.io/cocktail-recipes/)
 
 
-## Technologies Used
+## Technologies-Used
 
 
 [TheCocktailDB ](https://www.thecocktaildb.com/) |
 [JokeAPI ](https://v2.jokeapi.dev/) |
-[Bulma](https://bulma.io/) |
+[Bulma](https://bulma.io/)
 
 
 ## Credits
