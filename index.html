@@ -1,83 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>The Cocktail Findifier</title>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-        <link rel="stylesheet" href="./assets/style.css">
-    </head>
-    <body>
-        <header class="hide-me" id="header">
-        </header>
-        <!-- section #1 - .main-section when visible -->
-        <aside class="main-section" id="aside">
-            <!-- .main-div when visible -->
-            <div class="main-div" id="main-content">
-                <label for="searchBar">The Cocktail Findifier</label>
-                <input type="text" id="searchBar" autocomplete="off" placeholder="type your ingredient here" \>
-                <button id="getDrinks">What can I make?</button>
-
-
-                <div class="dropdown is-hoverable">
-                    <div class="dropdown-trigger">
-                      <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
-                        <span>Your previous searches &#8595;</span>
-                        
-                          <i class="fas fa-angle-down" aria-hidden="true"></i>
-                        </span>
-                      </button>
-                    </div>
-                    <div class="dropdown-menu" id="dropdown-menu4" role="menu">
-                      <div class="dropdown-content">
-                        <div id="historyDiv" class="dropdown-item">
-                           
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-
-
-                <!-- <p class="" id="historyP">
-                    Your previous searches ^
-                </p> -->
-
-
-
-
-
-
-
-                <!-- <div class="hide-me" id="historyDiv">
-                    aaaaa
-                </div> -->
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cocktail Findifier</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/style.css">
+  </head>
+  <body>
+    <header class="hide-me" id="header">
+    </header>
+    <!-- section #1 - .main-section when visible -->
+    <aside class="main-section" id="aside">
+      <!-- .main-div when visible -->
+      <div class="main-div" id="main-content">
+        <label for="searchBar">The Cocktail Findifier</label>
+        <input type="text" id="searchBar" autocomplete="off" placeholder="type your ingredient here" \>
+        <button id="getDrinks">What can I make?</button>
+        <div class="dropdown is-hoverable">
+          <div class="dropdown-trigger">
+            <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4">
+              <span>Your previous searches &#8595;</span>
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </button>
+          </div>
+          <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+            <div class="dropdown-content">
+              <div id="historyDiv" class="dropdown-item">        
             </div>
-
-            <!-- .jokes-div when visible -->
-            <div id="jokes" class="hide-me">
-
-                <p id="jokeP">Here is a joke while you wait for your results:</p>
-            </div>
-        </aside>
-
-        <!-- section #2 - .second-section when visible -->
-        <div class="hide-me" id="section-2-div">
-            <div id="ingredientDiv">
-                <p>Your searched ingredient was:</p>
-                <p id="ingNameId"></p>
-            </div>
-            <div id="drinkContainer">
-                <p id="results1"></p>                  
-                <p id="results2"></p>
-                <p id="results3"></p>
-                <p id="results4"></p>
-                <p id="results5"></p>
-            </div>          
+          </div>
         </div>
-        <button class= "hide-me" id="return" ></button>
-        <script src="assets/main.js"></script>
-        
-    </body>
+      </div>
+
+        <!-- <p class="" id="historyP">
+            Your previous searches ^
+        </p> -->
+        <!-- <div class="hide-me" id="historyDiv">
+            aaaaa
+        </div> -->
+      </div>
+
+      <!-- .jokes-div when visible -->
+      <div id="jokes" class="hide-me">
+
+        <p id="jokeP">Here is a joke while you wait for your results:</p>
+      </div>
+  </aside>
+
+  <!-- section #2 - .second-section when visible -->
+  <div class="hide-me" id="section-2-div">
+      <div id="ingredientDiv">
+        <p>Your searched ingredient was:</p>
+        <p id="ingNameId"></p>
+      </div>
+      <div id="drinkContainer">
+        <p id="results1"></p>                  
+        <p id="results2"></p>
+        <p id="results3"></p>
+        <p id="results4"></p>
+        <p id="results5"></p>
+      </div>          
+    </div>
+    <button class= "hide-me" id="return" ></button>
+    <script src="assets/main.js"></script>
+  </body>
 </html>
