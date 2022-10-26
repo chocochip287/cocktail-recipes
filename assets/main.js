@@ -56,6 +56,9 @@ function searchCheck() {
   ingredientName = document.getElementById("searchBar").value;
   if (ingredientName === "") {
     searchBar.setAttribute("placeholder", "You can't have a blank search!");
+  } else if (drinkResults === undefined) {
+    document.getElementById("searchBar").value = "";
+    searchBar.setAttribute("placeholder", "We don't know any drinks for that ingredient. Try another!");
   } else {
     getDrinks();
   }
@@ -162,23 +165,41 @@ function afterTimeout() {
 function resultsTransition() {
   // calls the random numbers function to determine the drinks to be displayed
   getRandomNumbers();
-  
   // section #2 div becomes visible
   sec2Div.setAttribute("class", "second-section");
-
-  // lists the searched ingredient 
   ingNameP.textContent = ingredientName + "!";
-  
-  // content element appends and attribute setups
+  // content attribute and text setup
+  r1Img.setAttribute("src", drinkResults.drinks[randomNumbers[0]].strDrinkThumb);
+  r1Img.setAttribute("alt", "A " + drinkResults.drinks[randomNumbers[0]].strDrink + " cocktail");
+  r1LinkDiv.textContent = "You're on your way to making a " + drinkResults.drinks[randomNumbers[0]].strDrink + "! For more info on your cocktail, click "
+  r1AEl.setAttribute("href", "https://www.google.com/search?q=" + drinkResults.drinks[randomNumbers[0]].strDrink + " cocktail");
+  r1AEl.textContent = "here!";
+  r2Img.setAttribute("src", drinkResults.drinks[randomNumbers[1]].strDrinkThumb);
+  r2Img.setAttribute("alt", "A " + drinkResults.drinks[randomNumbers[1]].strDrink + " cocktail");
+  r2LinkDiv.textContent = "You're on your way to making a " + drinkResults.drinks[randomNumbers[1]].strDrink + "! For more info on your cocktail, click "
+  r2AEl.setAttribute("href", "https://www.google.com/search?q=" + drinkResults.drinks[randomNumbers[1]].strDrink + " cocktail");
+  r2AEl.textContent = "here!";
+  r3Img.setAttribute("src", drinkResults.drinks[randomNumbers[2]].strDrinkThumb);
+  r3Img.setAttribute("alt", "A " + drinkResults.drinks[randomNumbers[2]].strDrink + " cocktail");
+  r3LinkDiv.textContent = "You're on your way to making a " + drinkResults.drinks[randomNumbers[2]].strDrink + "! For more info on your cocktail, click "
+  r3AEl.setAttribute("href", "https://www.google.com/search?q=" + drinkResults.drinks[randomNumbers[2]].strDrink + " cocktail");
+  r3AEl.textContent = "here!";
+  r4Img.setAttribute("src", drinkResults.drinks[randomNumbers[3]].strDrinkThumb);
+  r4Img.setAttribute("alt", "A " + drinkResults.drinks[randomNumbers[3]].strDrink + " cocktail");
+  r4LinkDiv.textContent = "You're on your way to making a " + drinkResults.drinks[randomNumbers[3]].strDrink + "! For more info on your cocktail, click "
+  r4AEl.setAttribute("href", "https://www.google.com/search?q=" + drinkResults.drinks[randomNumbers[3]].strDrink + " cocktail");
+  r4AEl.textContent = "here!";
+  r5Img.setAttribute("src", drinkResults.drinks[randomNumbers[4]].strDrinkThumb);
+  r5Img.setAttribute("alt", "A " + drinkResults.drinks[randomNumbers[4]].strDrink + " cocktail");
+  r5LinkDiv.textContent = "You're on your way to making a " + drinkResults.drinks[randomNumbers[0]].strDrink + "! For more info on your cocktail, click "
+  r5AEl.setAttribute("href", "https://www.google.com/search?q=" + drinkResults.drinks[randomNumbers[4]].strDrink + " cocktail");
+  r5AEl.textContent = "here!";
+  // r1Img.setAttribute("style", "margin: 5px; width: 18vh; height: 18vh;");
+  // content element appends
   if (drinkResults.drinks.length === 1) {
     r1.appendChild(r1Img);
     r1.appendChild(r1LinkDiv);
     r1LinkDiv.appendChild(r1AEl);
-    r1Img.setAttribute("src", drinkResults.drinks[randomNumbers[0]].strDrinkThumb);
-    r1Img.setAttribute("alt", "A " + drinkResults.drinks[randomNumbers[0]].strDrink + " cocktail");
-    r1LinkDiv.textContent = "You're on your way to making the " + drinkResults.drinks[randomNumbers[0]].strDrink + "! For more info on your cocktail, click "
-    r1AEl.setAttribute("href", "https://www.google.com/search?q=" + drinkResults.drinks[randomNumbers[0]].strDrink + " cocktail");
-    r1AEl.textContent = " " + "here!";
   } else if (drinkResults.drinks.length === 2) {
     r1.appendChild(r1Img);
     r1.appendChild(r1LinkDiv);
@@ -186,16 +207,6 @@ function resultsTransition() {
     r2.appendChild(r2Img);
     r2.appendChild(r2LinkDiv);
     r2LinkDiv.appendChild(r2AEl);
-    r1Img.setAttribute("src", drinkResults.drinks[randomNumbers[0]].strDrinkThumb);
-    r1Img.setAttribute("alt", "A " + drinkResults.drinks[randomNumbers[0]].strDrink + " cocktail");
-    r1LinkDiv.textContent = "You're on your way to making the " + drinkResults.drinks[randomNumbers[0]].strDrink + "! For more info on your cocktail, click "
-    r1AEl.setAttribute("href", "https://www.google.com/search?q=" + drinkResults.drinks[randomNumbers[0]].strDrink + " cocktail");
-    r1AEl.textContent = " " + "here!";
-    r2Img.setAttribute("src", drinkResults.drinks[randomNumbers[1]].strDrinkThumb);
-    r2Img.setAttribute("alt", "A " + drinkResults.drinks[randomNumbers[1]].strDrink + " cocktail");
-    r2LinkDiv.textContent = "You're on your way to making the " + drinkResults.drinks[randomNumbers[1]].strDrink + "! For more info on your cocktail, click "
-    r2AEl.setAttribute("href", "https://www.google.com/search?q=" + drinkResults.drinks[randomNumbers[1]].strDrink + " cocktail");
-    r2AEl.textContent = " " + "here!";
   } else if (drinkResults.drinks.length === 3) {
     r1.appendChild(r1Img);
     r1.appendChild(r1LinkDiv);
@@ -206,21 +217,6 @@ function resultsTransition() {
     r3.appendChild(r3Img);
     r3.appendChild(r3LinkDiv);
     r3LinkDiv.appendChild(r3AEl);
-    r1Img.setAttribute("src", drinkResults.drinks[randomNumbers[0]].strDrinkThumb);
-    r1Img.setAttribute("alt", "A " + drinkResults.drinks[randomNumbers[0]].strDrink + " cocktail");
-    r1LinkDiv.textContent = "You're on your way to making the " + drinkResults.drinks[randomNumbers[0]].strDrink + "! For more info on your cocktail, click "
-    r1AEl.setAttribute("href", "https://www.google.com/search?q=" + drinkResults.drinks[randomNumbers[0]].strDrink + " cocktail");
-    r1AEl.textContent = " " + "here!";
-    r2Img.setAttribute("src", drinkResults.drinks[randomNumbers[1]].strDrinkThumb);
-    r2Img.setAttribute("alt", "A " + drinkResults.drinks[randomNumbers[1]].strDrink + " cocktail");
-    r2LinkDiv.textContent = "You're on your way to making the " + drinkResults.drinks[randomNumbers[1]].strDrink + "! For more info on your cocktail, click "
-    r2AEl.setAttribute("href", "https://www.google.com/search?q=" + drinkResults.drinks[randomNumbers[1]].strDrink + " cocktail");
-    r2AEl.textContent = " " + "here!";
-    r3Img.setAttribute("src", drinkResults.drinks[randomNumbers[2]].strDrinkThumb);
-    r3Img.setAttribute("alt", "A " + drinkResults.drinks[randomNumbers[2]].strDrink + " cocktail");
-    r3LinkDiv.textContent = "You're on your way to making the " + drinkResults.drinks[randomNumbers[2]].strDrink + "! For more info on your cocktail, click "
-    r3AEl.setAttribute("href", "https://www.google.com/search?q=" + drinkResults.drinks[randomNumbers[2]].strDrink + " cocktail");
-    r3AEl.textContent = " " + "here!";
   } else if (drinkResults.drinks.length === 4) {
     r1.appendChild(r1Img);
     r1.appendChild(r1LinkDiv);
@@ -234,26 +230,6 @@ function resultsTransition() {
     r4.appendChild(r4Img);
     r4.appendChild(r4LinkDiv);
     r4LinkDiv.appendChild(r4AEl);
-    r1Img.setAttribute("src", drinkResults.drinks[randomNumbers[0]].strDrinkThumb);
-    r1Img.setAttribute("alt", "A " + drinkResults.drinks[randomNumbers[0]].strDrink + " cocktail");
-    r1LinkDiv.textContent = "You're on your way to making the " + drinkResults.drinks[randomNumbers[0]].strDrink + "! For more info on your cocktail, click "
-    r1AEl.setAttribute("href", "https://www.google.com/search?q=" + drinkResults.drinks[randomNumbers[0]].strDrink + " cocktail");
-    r1AEl.textContent = " " + "here!";
-    r2Img.setAttribute("src", drinkResults.drinks[randomNumbers[1]].strDrinkThumb);
-    r2Img.setAttribute("alt", "A " + drinkResults.drinks[randomNumbers[1]].strDrink + " cocktail");
-    r2LinkDiv.textContent = "You're on your way to making the " + drinkResults.drinks[randomNumbers[1]].strDrink + "! For more info on your cocktail, click "
-    r2AEl.setAttribute("href", "https://www.google.com/search?q=" + drinkResults.drinks[randomNumbers[1]].strDrink + " cocktail");
-    r2AEl.textContent = " " + "here!";
-    r3Img.setAttribute("src", drinkResults.drinks[randomNumbers[2]].strDrinkThumb);
-    r3Img.setAttribute("alt", "A " + drinkResults.drinks[randomNumbers[2]].strDrink + " cocktail");
-    r3LinkDiv.textContent = "You're on your way to making the " + drinkResults.drinks[randomNumbers[2]].strDrink + "! For more info on your cocktail, click "
-    r3AEl.setAttribute("href", "https://www.google.com/search?q=" + drinkResults.drinks[randomNumbers[2]].strDrink + " cocktail");
-    r3AEl.textContent = " " + "here!";
-    r4Img.setAttribute("src", drinkResults.drinks[randomNumbers[3]].strDrinkThumb);
-    r4Img.setAttribute("alt", "A " + drinkResults.drinks[randomNumbers[3]].strDrink + " cocktail");
-    r4LinkDiv.textContent = "You're on your way to making the " + drinkResults.drinks[randomNumbers[3]].strDrink + "! For more info on your cocktail, click "
-    r4AEl.setAttribute("href", "https://www.google.com/search?q=" + drinkResults.drinks[randomNumbers[3]].strDrink + " cocktail");
-    r4AEl.textContent = " " + "here!";
   } else if (drinkResults.drinks.length >= 5) {
     r1.appendChild(r1Img);
     r1.appendChild(r1LinkDiv);
@@ -270,31 +246,6 @@ function resultsTransition() {
     r5.appendChild(r5Img);
     r5.appendChild(r5LinkDiv);
     r5LinkDiv.appendChild(r5AEl);
-    r1Img.setAttribute("src", drinkResults.drinks[randomNumbers[0]].strDrinkThumb);
-    r1Img.setAttribute("alt", "A " + drinkResults.drinks[randomNumbers[0]].strDrink + " cocktail");
-    r1LinkDiv.textContent = "You're on your way to making the " + drinkResults.drinks[randomNumbers[0]].strDrink + "! For more info on your cocktail, click "
-    r1AEl.setAttribute("href", "https://www.google.com/search?q=" + drinkResults.drinks[randomNumbers[0]].strDrink + " cocktail");
-    r1AEl.textContent = "here!";
-    r2Img.setAttribute("src", drinkResults.drinks[randomNumbers[1]].strDrinkThumb);
-    r2Img.setAttribute("alt", "A " + drinkResults.drinks[randomNumbers[1]].strDrink + " cocktail");
-    r2LinkDiv.textContent = "You're on your way to making the " + drinkResults.drinks[randomNumbers[1]].strDrink + "! For more info on your cocktail, click "
-    r2AEl.setAttribute("href", "https://www.google.com/search?q=" + drinkResults.drinks[randomNumbers[1]].strDrink + " cocktail");
-    r2AEl.textContent = " " + "here!";
-    r3Img.setAttribute("src", drinkResults.drinks[randomNumbers[2]].strDrinkThumb);
-    r3Img.setAttribute("alt", "A " + drinkResults.drinks[randomNumbers[2]].strDrink + " cocktail");
-    r3LinkDiv.textContent = "You're on your way to making the " + drinkResults.drinks[randomNumbers[2]].strDrink + "! For more info on your cocktail, click "
-    r3AEl.setAttribute("href", "https://www.google.com/search?q=" + drinkResults.drinks[randomNumbers[2]].strDrink + " cocktail");
-    r3AEl.textContent = " " + "here!";
-    r4Img.setAttribute("src", drinkResults.drinks[randomNumbers[3]].strDrinkThumb);
-    r4Img.setAttribute("alt", "A " + drinkResults.drinks[randomNumbers[3]].strDrink + " cocktail");
-    r4LinkDiv.textContent = "You're on your way to making the " + drinkResults.drinks[randomNumbers[3]].strDrink + "! For more info on your cocktail, click "
-    r4AEl.setAttribute("href", "https://www.google.com/search?q=" + drinkResults.drinks[randomNumbers[3]].strDrink + " cocktail");
-    r4AEl.textContent = " " + "here!";
-    r5Img.setAttribute("src", drinkResults.drinks[randomNumbers[4]].strDrinkThumb);
-    r5Img.setAttribute("alt", "A " + drinkResults.drinks[randomNumbers[4]].strDrink + " cocktail");
-    r5LinkDiv.textContent = "You're on your way to making the " + drinkResults.drinks[randomNumbers[4]].strDrink + "! For more info on your cocktail, click "
-    r5AEl.setAttribute("href", "https://www.google.com/search?q=" + drinkResults.drinks[randomNumbers[4]].strDrink + " cocktail");
-    r5AEl.textContent = " " + "here!";
   } else {
     r1.textContent = "Looks like you have no results for your ingredient. Check your spelling for potential typos or try another ingredient."
   }
