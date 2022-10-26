@@ -47,7 +47,7 @@ var ingredientName = "";
 // establishing drinkResults in the global scope
 var drinkResults;
 // variable for the timer for the joke screen transition
-var timeLeft = 1;
+var timeLeft = 7;
 // variable to append text into the jokes div
 var jokesTextDiv = document.createElement("div");
 
@@ -124,6 +124,7 @@ function getRandomNumbers() {
 
 function jokesTransition() {
   getJokes();
+  timeLeft = 7;
   // class switches to hide pre-search screen and start the timer
   mainDiv.setAttribute("class", "hide-me");
   jokesDiv.setAttribute("class", "jokes-div");
