@@ -154,7 +154,7 @@ function jokesTransition() {
       // setTimeout(afterTimeout , 3000);
       afterTimeout();
     }
-  }, 500);
+  }, 1000);
 }
 
 function afterTimeout() {
