@@ -60,9 +60,7 @@ Here is the link to the finished work:
 [Deployed website](https://chocochip287.github.io/cocktail-recipes/)|
 
 
-## Credits
-
-Matt Goldsmith, Allan Elias, Angelica Ibarra, Saeed Elmakki
+## Technologies Used
 
 
 [TheCocktailDB ](https://www.thecocktaildb.com/) |
@@ -73,7 +71,7 @@ Matt Goldsmith, Allan Elias, Angelica Ibarra, Saeed Elmakki
 [Bulma](https://bulma.io/) |
 
 
-## Specific-Project-tasks
+## Credits
 
 Matt Goldsmith -  Repository Admin, User Experience/UX (project structure, organization, flow, and stylization) -
  connected the app's individual elements into a cohesive and functional user experience with supporting JavaScript functions and uniform presentation
