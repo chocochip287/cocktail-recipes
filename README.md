@@ -18,26 +18,35 @@ As a person who has an active social life and who has frequent guests visiting, 
 
 
 ## Usage
-1. Open the  cocktail app. In the search bar, enter the ingredients you would like to use to prepare your drink.
-Click on the "what can I make?" button.
+1. Open the  cocktail app. In the search bar, enter the ingredient you would like to use to prepare your drink.
+Click on the "What can I make?" button.
 
 
-![The screen shows pictures of propsed drinks based on the selected ingredients.](./assets/img/image2.jpeg)
+![The screen shows a picture of the main page.](./assets/img/mainscreen.png)
 
 
-3. The application will display a joke while the userwaits for their results with the many differnet drinks that incude the ingredients you selected.
+2. The application will display a joke while the userwaits for their results with the many differnet drinks that incude the ingredients you selected.
 
-![The screen shows pictures of propsed drinks based on the selected ingredients.](./assets/img/image3.jpeg)
+![The screen shows a picture of the transition with a joke.](./assets/img/jokescreen.png)
 
-4. When the timer is over, a list with the suggested drinks will appear. 
+3. When the timer is over, a list with the suggested drinks will appear. 
 
-![The screen shows pictures of propsed drinks based on the selected ingredients.](./assets/img/image4.jpeg)
+![The screen shows pictures of propsed drinks based on the searched ingredients.](./assets/img/drinkrenderscreen.png)
+
+4. Click the "Return to main" button to go back to the first screen.
+
+![The screen shows a picture of an arrow pointing to the "Return to main" button.](./assets/img/returntomain.png)
+
+5. Hover over "Your previous searches" to see a list of you most recent searches. Click it to paste it to the search bar.
+
+![The screen shows a picture of the recent searches when the button "Your previous searches" is hovered over.](./assets/img/localstorage.png)
+
 
 ## Mock-Up
 
 
 The following image shows the finished product
-![The screen shows pictures of propsed drinks based on the selected ingredients.](./assets/img/image1.jpeg)
+![The screen shows a picture of the finished app.](./assets/img/finished.png)
 
 
 

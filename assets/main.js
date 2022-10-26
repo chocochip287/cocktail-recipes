@@ -35,6 +35,8 @@ var r5Img = document.createElement("img");
 var r5NameDiv = document.createElement("div");
 var r5LinkDiv = document.createElement("div");
 var r5AEl = document.createElement("a");
+var ingredID = ''
+
 
 // var historyBtn = document.querySelector(".")
 //Joke paragraph
@@ -56,10 +58,10 @@ function searchCheck() {
   ingredientName = document.getElementById("searchBar").value;
   if (ingredientName === "") {
     searchBar.setAttribute("placeholder", "You can't have a blank search!");
-  } else if (drinkResults === undefined) {
+  }/* else if (drinkResults.drinks === undefined) {
     document.getElementById("searchBar").value = "";
     searchBar.setAttribute("placeholder", "We don't know any drinks for that ingredient. Try another!");
-  } else {
+  }*/ else {
     getDrinks();
   }
 }
@@ -78,8 +80,9 @@ function getDrinks() {
     .then(function (data) {
       // renderDrinks(data)
       drinkResults = data;
+      console.log(drinkResults)
     });
-
+    
   jokesTransition();
   addToStorage();
 }
@@ -191,7 +194,7 @@ function resultsTransition() {
   r4AEl.textContent = "here!";
   r5Img.setAttribute("src", drinkResults.drinks[randomNumbers[4]].strDrinkThumb);
   r5Img.setAttribute("alt", "A " + drinkResults.drinks[randomNumbers[4]].strDrink + " cocktail");
-  r5LinkDiv.textContent = "You're on your way to making a " + drinkResults.drinks[randomNumbers[0]].strDrink + "! For more info on your cocktail, click "
+  r5LinkDiv.textContent = "You're on your way to making a " + drinkResults.drinks[randomNumbers[4]].strDrink + "! For more info on your cocktail, click "
   r5AEl.setAttribute("href", "https://www.google.com/search?q=" + drinkResults.drinks[randomNumbers[4]].strDrink + " cocktail");
   r5AEl.textContent = "here!";
   // r1Img.setAttribute("style", "margin: 5px; width: 18vh; height: 18vh;");
@@ -361,7 +364,7 @@ function transferBtn(event) {
 
 function renderReturnBtn() {
   footerEl.setAttribute("class", "");
-  footerEl.textContent = "Click here to return to main page";
+  footerEl.textContent = "Return to main page";
   footerEl.addEventListener("click", returnToMain);
 }
 
