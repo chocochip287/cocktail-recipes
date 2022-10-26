@@ -35,6 +35,8 @@ var r5Img = document.createElement("img");
 var r5NameDiv = document.createElement("div");
 var r5LinkDiv = document.createElement("div");
 var r5AEl = document.createElement("a");
+var ingredID = ''
+
 
 // var historyBtn = document.querySelector(".")
 //Joke paragraph
@@ -78,8 +80,9 @@ function getDrinks() {
     .then(function (data) {
       // renderDrinks(data)
       drinkResults = data;
+      console.log(drinkResults)
     });
-
+    
   jokesTransition();
   addToStorage();
 }
@@ -148,10 +151,10 @@ function jokesTransition() {
       jokesTextDiv.textContent = "Your search results are..";
       resultsTransition();
       clearInterval(jokesTimer);
-      // setTimeout(afterTimeout , 3000);
+      setTimeout(afterTimeout , 3000);
       afterTimeout();
     }
-  }, 800);
+  }, 1000);
 }
 
 function afterTimeout() {
@@ -159,6 +162,7 @@ function afterTimeout() {
   jokesDiv.setAttribute("class", "hide-me");
   jokesDiv.setAttribute("style", "display: none;");
   renderDrinks();
+  timeLeft = 9;
   renderReturnBtn();
 }
 
@@ -421,7 +425,7 @@ function transferBtn(event) {
 
 function renderReturnBtn() {
   footerEl.setAttribute("class", "");
-  footerEl.textContent = "Click here to return to main page";
+  footerEl.textContent = "Return to main page";
   footerEl.addEventListener("click", returnToMain);
 }
 

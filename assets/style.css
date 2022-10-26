@@ -7,7 +7,7 @@
 }
 
 /* This is the line that fixes the autofill white background */
-input:-webkit-autofill,
+/* input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus,
 textarea:-webkit-autofill,
@@ -17,11 +17,11 @@ select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
   -webkit-text-fill-color: white;
-  /*-webkit-box-shadow: 0 0 0px 1000px rgb(16, 43, 68) inset;*/
+  -webkit-box-shadow: 0 0 0px 1000px rgb(16, 43, 68) inset;
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
-}
+} */
 
 body {
     height: 100vh;
