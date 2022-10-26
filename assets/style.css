@@ -16,7 +16,6 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  border: 1px solid green;
   -webkit-text-fill-color: white;
   /*-webkit-box-shadow: 0 0 0px 1000px rgb(16, 43, 68) inset;*/
   -moz-text-size-adjust: none;
@@ -26,7 +25,6 @@ select:-webkit-autofill:focus {
 
 body {
     height: 100vh;
-    border: 2px solid red;
 }
 
 .header {
@@ -38,7 +36,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 2px solid white;
     height: 90vh;
 }
 
@@ -47,7 +44,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 2px solid white;
     height: 90vh;
 }
 
@@ -56,14 +52,12 @@ body {
     flex-direction: row;
     align-items: left;
     justify-content: flex-start;
-    border: 2px solid white;
     height: 100vh;
 }
 
 #ingredientDiv {
    display: flex;
    flex-direction: row;
-   border: 2px solid purple;
    width: 33vw;
    height: 95vh;
    border-bottom: 2px solid rgb(48, 75, 100);
@@ -74,14 +68,12 @@ body {
     display: flex;
     flex-direction: column;
     float: right;
-    border: 2px solid green;
-    width: 100vw;
+    width: 80vw;
     height: 95vh;
 }
 
 #searchBar {
     width: 50%;
-    /* font-size: 18px;*/
     padding: 11px;
     border: 1px solid #ddd;
     text-align: center;
@@ -109,27 +101,38 @@ body {
 }
 
 #ingredientDiv {
+    font-size: 36px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 #results1, #results2, #results3, #results4, #results5 {
     display: flex;
-    float: left;
     border-bottom: 2px solid rgb(48, 75, 100);
     height: 20vh;
 }
 
 #results1 div, #results2 div, #results3 div, #results4 div, #results5 div {
+    display: flex;
+    flex-direction: column;
     border-left: 2px solid rgb(48, 75, 100);
-    border-bottom: 2px solid rgb(48, 75, 100);
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#results1 a, #results2 a, #results3 a, #results4 a, #results5 a {
+    margin-left: 5px;
 }
 
 img {
+    float: left;
     margin: 5px; 
-    /*width: 16vw; */
+    width: 17vw;
     height: 17vh;
     border: 2px solid white;
 }
