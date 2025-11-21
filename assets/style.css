@@ -1,158 +1,300 @@
-/* full borders are present only for planning/structuring purposes. */
-
+/* ========== GLOBAL ========== */
 
 * {
-    background-color: rgb(16, 43, 68);
-    color: rgb(255, 255, 255);
+  box-sizing: border-box;
 }
-
-/* This is the line that fixes the autofill white background */
-/* input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus,
-textarea:-webkit-autofill,
-textarea:-webkit-autofill:hover,
-textarea:-webkit-autofill:focus,
-select:-webkit-autofill,
-select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
-  -webkit-text-fill-color: white;
-  -webkit-box-shadow: 0 0 0px 1000px rgb(16, 43, 68) inset;
-  -moz-text-size-adjust: none;
-  -webkit-text-size-adjust: none;
-  text-size-adjust: none;
-} */
 
 body {
-    height: 100vh;
+  margin: 0;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background: radial-gradient(circle at top, #163a5c 0, #050816 55%, #02040a 100%);
+  color: #f5f7fb;
 }
 
-.header {
-    display: flex;
+/* Utility hide class used by JS */
+.hide-me {
+  display: none !important;
 }
 
+/* ========== LANDING / MAIN SECTION ========== */
+
+.main-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* Card that holds the landing UI */
 .main-div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 90vh;
+  width: 100%;
+  max-width: 460px;
+  padding: 32px 28px 36px;
+  border-radius: 18px;
+  background: rgba(3, 10, 24, 0.9);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: center;
 }
 
-.jokes-div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 90vh;
+/* Title ("The Cocktail Findifier" label) */
+label[for="searchBar"] {
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+  color: #ffffff;
 }
+
+/* SEARCH INPUT */
+#searchBar {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #2c4e70;
+  background: rgba(12, 29, 53, 0.95);
+  color: #f5f7fb;
+  font-size: 1rem;
+  margin-top: 10px;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease,
+    background 0.18s ease, transform 0.08s ease;
+  text-align: center;
+}
+
+#searchBar::placeholder {
+  color: #9fb4ca;
+}
+
+#searchBar:focus {
+  outline: none;
+  border-color: #ffb84d;
+  background: rgba(18, 38, 66, 1);
+  box-shadow: 0 0 0 1px rgba(255, 184, 77, 0.6);
+  transform: translateY(-1px);
+}
+
+/* ========== PRIMARY CTA BUTTON ========== */
+
+#getDrinks {
+  margin-top: 14px;
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 999px;
+  border: none;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(135deg, #ff9f3c, #ff6b3c);
+  color: #1b1208;
+  box-shadow: 0 12px 28px rgba(255, 111, 60, 0.5);
+  transition: transform 0.1s ease, box-shadow 0.1s ease, filter 0.1s ease;
+}
+
+#getDrinks:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 35px rgba(255, 111, 60, 0.7);
+  filter: brightness(1.03);
+}
+
+#getDrinks:active {
+  transform: translateY(0);
+  box-shadow: 0 10px 22px rgba(255, 111, 60, 0.45);
+}
+
+/* ========== DROPDOWN (PREVIOUS SEARCHES) ========== */
+
+.dropdown {
+  margin-top: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-trigger .button {
+  border-radius: 999px;
+  padding: 8px 16px;
+  background: rgba(18, 38, 66, 0.9);
+  border: 1px solid #2c4e70;
+  color: #d3e2f4;
+  font-size: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease,
+    transform 0.08s ease;
+}
+
+.dropdown-trigger .button:hover {
+  background: rgba(28, 52, 84, 0.95);
+  border-color: #3c6896;
+  transform: translateY(-1px);
+}
+
+/* Keep menu attached to button so hover works cleanly */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  /* margin-top: 2px; */
+  z-index: 1000;
+}
+
+.dropdown-content {
+  background: rgba(5, 18, 38, 0.98);
+  border-radius: 10px;
+  border: 1px solid #2c4e70;
+  padding: 8px 0;
+  min-width: 220px;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+#historyDiv {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 6px;
+  padding: 4px 10px 8px;
+}
+
+#historyDiv button {
+      display: flex;
+    width: 100%;
+    border-radius: 999px;
+    padding: 6px 10px;
+    border: 1px solid #2c4e70;
+    background: rgba(15, 34, 60, 0.95);
+    color: #d3e2f4;
+    font-size: 0.85rem;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.15s ease, border-color 0.15s ease,
+    transform 0.08s ease;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+#historyDiv button:hover {
+  background: rgba(33, 60, 98, 0.95);
+  border-color: #3c6896;
+  transform: translateY(-1px);
+}
+
+/* ========== RESULTS SECTION (SECOND VIEW) ========== */
 
 .second-section {
-    display: flex;
-    flex-direction: row;
-    align-items: left;
-    justify-content: flex-start;
-    height: 100vh;
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  padding: 24px;
+  gap: 20px;
 }
 
+/* Left panel with ingredient name */
 #ingredientDiv {
-   display: flex;
-   flex-direction: row;
-   width: 33vw;
-   height: 95vh;
-   border-bottom: 2px solid rgb(48, 75, 100);
-   border-right: 2px solid rgb(48, 75, 100);
+  flex: 0 0 30%;
+  border-radius: 16px;
+  border: 1px solid #2c4e70;
+  background: rgba(5, 18, 38, 0.95);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+  font-size: 1.2rem;
 }
 
+#ingNameId {
+  margin-top: 10px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffb84d;
+}
+
+/* Right panel with drink cards */
 #drinkContainer {
-    display: flex;
-    flex-direction: column;
-    float: right;
-    width: 80vw;
-    height: 95vh;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  justify-content: space-around;
 }
 
-#searchBar {
-    width: 50%;
-    padding: 11px;
-    border: 1px solid #ddd;
-    text-align: center;
+/* Each result row (p element becomes a card) */
+#drinkContainer p {
+  border-radius: 12px;
+  border: 1px solid #2c4e70;
+  background: rgba(7, 22, 44, 0.95);
+  min-height: 90px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Image inside results */
+#drinkContainer img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #ffffff;
+}
+
+/* Text divs in results */
+#drinkContainer div {
+  text-align: center;
+}
+
+/* Links */
+#drinkContainer a {
+  color: #ffb84d;
+  text-decoration: underline;
+}
+
+/* Return button */
+#return {
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid #2c4e70;
+  background: rgba(5, 18, 38, 0.96);
+  color: #d3e2f4;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.15s ease, border-color 0.15s ease,
+    transform 0.08s ease;
+}
+
+#return:hover {
+  background: rgba(16, 43, 80, 0.98);
+  border-color: #3c6896;
+  transform: translateY(-1px);
+}
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 768px) {
+  .main-div {
+    max-width: 360px;
+    padding: 24px 20px 28px;
+  }
+
+  .second-section {
+    flex-direction: column;
+  }
+
+  #ingredientDiv {
+    flex-basis: auto;
+    width: 100%;
     margin-bottom: 10px;
-    margin-top: 5px;
+  }
 }
-
-.hide-me {
-    display: none;
-}
-
-#placeholderHistory {
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.button{
-    background-color: rgb(16, 43, 68);
-}
-
-.dropdown-content{
-    background-color: rgb(16, 43, 68);
-}
-
-#ingredientDiv {
-    font-size: 36px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-#results1, #results2, #results3, #results4, #results5 {
-    display: flex;
-    border-bottom: 2px solid rgb(48, 75, 100);
-    height: 20vh;
-}
-
-#results1 div, #results2 div, #results3 div, #results4 div, #results5 div {
-    display: flex;
-    flex-direction: column;
-    border-left: 2px solid rgb(48, 75, 100);
-    width: 100vw;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-#results1 a, #results2 a, #results3 a, #results4 a, #results5 a {
-    margin-left: 5px;
-}
-
-img {
-    float: left;
-    margin: 5px; 
-    width: 17vw;
-    height: 17vh;
-    border: 2px solid white;
-}
-
-#getDrinks{
-    font-size : 25px;
-}
-
-#return{
-    position: fixed;
-    bottom: 2px;
-    left: 5px
-}
-
-button{
-    border-color: white
-}
-
-#historyDiv{
-    display: flex;
-    flex-direction: column-reverse;
-}
-
